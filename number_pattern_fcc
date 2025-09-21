@@ -1,0 +1,21 @@
+def number_pattern(n):
+
+    if not isinstance(n, int):
+        return "Argument must be an integer value."
+    if n < 1:
+        return "Argument must be an integer greater than 0."
+    
+    #include n in range
+    my_list = list(range(n+1))
+
+    #no zero here
+    before_result = filter(lambda x: x > 0, my_list)
+
+    #string each number to join
+    result = map(lambda x: str(x), before_result)
+
+    return " ".join(result).strip()
+
+
+print(number_pattern(6))
+#1 2 3 4 5 6
