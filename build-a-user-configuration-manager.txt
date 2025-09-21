@@ -1,0 +1,69 @@
+** start of main.py **
+
+test_settings = {
+    "theme": "dark",
+    "notifications": "enabled",
+    "volume": "high"
+}
+
+
+def add_setting(d, t):
+
+    key = str(t[0]).lower()
+    val = str(t[1]).lower()
+    
+    if key in d:
+        return f"Setting '{key}' already exists! Cannot add a new setting with this name."
+    else:
+        d.update({key: val})
+        return f"Setting '{key}' added with value '{val}' successfully!"
+    
+
+def update_setting(d, t):
+
+    key = str(t[0]).lower()
+    val = str(t[1]).lower()
+
+    if key in d:
+        d.update({key: val})
+        return f"Setting '{key}' updated to '{val}' successfully!"
+    else:
+        return f"Setting '{key}' does not exist! Cannot update a non-existing setting."
+
+
+def delete_setting(d, k):
+
+    key = k.lower()
+
+    if key in d:
+        d.pop(key)
+        return f"Setting '{key}' deleted successfully!"
+    else:
+        return f"Setting not found!"
+
+    
+def view_settings(d):
+
+    text = ""
+
+    for k, v in d.items():
+        text += str(k.capitalize()) + ": " + str(v) + "\n"
+
+    if len(d) == 0:
+        return f"No settings available."
+    else:
+        return "Current User Settings:\n" + text
+
+
+
+print(add_setting(test_settings, ("volume", "low")))
+
+print(update_setting(test_settings, ("volume", "low")))
+
+print(delete_setting(test_settings, "volume"))
+
+print(view_settings(test_settings))
+    
+
+** end of main.py **
+
