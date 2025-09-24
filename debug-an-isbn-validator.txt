@@ -128,7 +128,8 @@ def main():
             for item in isbn:
                 if not item.isdigit():
                     print('Invalid character was found.')
-
+                    return
+                    #maybe "return" is not necessary here, because all my tests are OK; but I forgot to add "return" as I did before in the previous for loop.
 
         if length.isdigit():
             if int(length) == 10 or int(length) == 13:
@@ -138,7 +139,10 @@ def main():
         else:
             print('Length must be a number.')
 
+#as you can see, no "return"s were necessary here (in the if-else length)
+
 #main()
+#to pass all tests, FCC asked to comment out the main function; but for debugging, you need to see what's happening in the project calling main() (and print some steps to see the response on the console)
 
 ** end of main.py **
 
