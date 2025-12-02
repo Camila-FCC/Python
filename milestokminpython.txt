@@ -1,0 +1,32 @@
+** start of main.py **
+
+def convert_to_km(miles):
+
+    one_mile_to_km = 1.60934
+
+    if(miles < 0):
+        return print("Only positive numbers, please.")
+    
+    # 1 mile = 1.60934 km
+    #  miles =   ? km
+
+    calc = round((one_mile_to_km * miles), 2)
+
+    return calc
+
+
+#### Miles to Kilometers
+
+    # Given a distance in miles as a number, return the equivalent distance in kilometers.
+
+    # The input will always be a non-negative number.
+
+    # 1 mile equals 1.60934 kilometers.
+
+    # Round the result to two decimal places.
+
+
+#print(convert_to_km(3.5))
+
+** end of main.py **
+
