@@ -1,0 +1,67 @@
+** start of main.py **
+
+import re
+
+def format_date(date_string):
+
+    month = date_string.split(" ")[0]
+
+    year = date_string.split(" ")[2]
+
+    day = date_string.split(" ")[1]
+
+    day_regex = "".join(re.findall(r"\d+", day))
+
+    if len(day_regex) < 2:
+        day_regex = f"0{day_regex}"
+
+    match month:
+        case "December":
+            month = 12
+        case "November":
+            month = 11
+        case "October":
+            month = 10
+        case "September":
+            month = '09'
+        case "August":
+            month = '08'
+        case "July":
+            month = '07'
+        case "June":
+            month = '06'
+        case "May":
+            month = '05'
+        case "April":
+            month = '04'
+        case "March":
+            month = '03'
+        case "February":
+            month = '02'
+        case "January":
+            month = '01'
+    
+
+    return f'{year}-{month}-{day_regex}'
+
+print(
+format_date("December 6, 2025")) 
+# "2025-12-06"
+
+print(format_date("January 1, 2000"))
+# "2000-01-01"
+
+print(format_date("November 11, 1111"))
+# "1111-11-11"
+
+print(format_date("September 7, 512"))
+# "512-09-07"
+
+print(format_date("May 4, 1950"))
+# "1950-05-04"
+
+print(format_date("February 29, 1992"))
+# "1992-02-29"
+
+** end of main.py **
+
