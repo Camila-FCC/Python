@@ -1,0 +1,32 @@
+** start of main.py **
+
+def convert_to_kgs(lbs):
+
+    pound = 0.453592
+    kgs = "{:.2f}".format(pound * lbs)
+
+    calc_lbs = "pound" if lbs == 1 else "pounds"
+
+    calc_kgs = "kilogram" if kgs == "1.00" else "kilograms"
+
+    return f'{lbs} {calc_lbs} equals {kgs} {calc_kgs}.'
+
+
+
+print(convert_to_kgs(1)) 
+# "1 pound equals 0.45 kilograms."
+
+print(convert_to_kgs(0)) 
+# "0 pounds equals 0.00 kilograms."
+
+print(convert_to_kgs(100))
+# "100 pounds equals 45.36 kilograms."
+
+print(convert_to_kgs(2.5)) 
+# "2.5 pounds equals 1.13 kilograms."
+
+print(convert_to_kgs(2.20462)) 
+# "2.20462 pounds equals 1.00 kilogram."
+
+** end of main.py **
+
