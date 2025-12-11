@@ -1,0 +1,44 @@
+** start of main.py **
+
+import re
+
+def to_roman(num):
+
+    if num > 3999:
+        return "Not possible. Only numbers <= 3999"
+    
+    roman = ""
+
+    while num < 4000:
+
+        roman += "I"
+
+        num -= 1;
+
+        if num == 0:
+            break
+
+    correct = [
+        ("I{1000}", "M"),
+        ("I{900}", "CM"),
+        ("I{500}", "D"),
+        ("I{400}", "CD"),
+        ("I{100}", "C"),
+        ("I{90}", "XC"),
+        ("I{50}", "L"),
+        ("I{40}", "XL"),
+        ("I{10}", "X"),
+        ("I{9}", "IX"),
+        ("I{5}", "V"),
+        ("I{4}", "IV")
+    ]
+
+    for old, new in correct:
+        roman = re.sub(old, new, roman)
+
+    return roman
+
+print(to_roman(1464))
+
+** end of main.py **
+
