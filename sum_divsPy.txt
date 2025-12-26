@@ -20,7 +20,7 @@ def sum_divisors(n):
     
 
 print(sum_divisors(6)) 
-#should return 12
+# should return 12
 
 print(sum_divisors(13))
 # should return 14
