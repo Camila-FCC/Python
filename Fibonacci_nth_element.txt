@@ -1,0 +1,20 @@
+** start of main.py **
+
+def nth_fibonacci(n):
+
+    i = 2
+    nums = [0, 1]
+
+    while len(nums) < n:
+
+        nums.append(nums[i-1] + nums[i-2])
+
+        i += 1;
+
+    return nums[-1]
+
+
+print(nth_fibonacci(15))
+
+** end of main.py **
+
