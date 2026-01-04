@@ -1,0 +1,12 @@
+** start of main.py **
+
+def is_leap_year(year):
+
+    res = True if (year % 100 == 0 and year % 400 == 0) else False if (year % 100 == 0 and year % 400 != 0) else True if (year % 100 != 0 and year % 4 == 0) else False
+
+    return res
+
+print(is_leap_year(2100))
+
+** end of main.py **
+
