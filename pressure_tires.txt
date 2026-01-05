@@ -1,0 +1,31 @@
+** start of main.py **
+
+def tire_status(pressures_psi, range_bar):
+
+    bar_values = list(map(lambda b: b * 14.5038, range_bar))
+
+    bar_min = bar_values[0]
+    bar_max = bar_values[1]
+
+    pressures_status = list(map(lambda p: "Low" if p < bar_min else "High" if p > bar_max else "Good", pressures_psi))
+
+    return pressures_status
+
+
+print(tire_status([32, 28, 35, 29], [2, 3])) 
+# ["Good", "Low", "Good", "Low"]
+
+print(tire_status([32, 28, 35, 30], [2, 2.3]))
+# ["Good", "Low", "High", "Good"]
+
+print(tire_status([29, 26, 31, 28], [2.1, 2.5]))
+# ["Low", "Low", "Good", "Low"]
+
+print(tire_status([31, 31, 30, 29], [1.5, 2]))
+# ["High", "High", "High", "Good"]
+
+print(tire_status([30, 28, 30, 29], [1.9, 2.1]))
+# ["Good", "Good", "Good", "Good"]
+
+** end of main.py **
+
