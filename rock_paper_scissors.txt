@@ -1,0 +1,10 @@
+** start of main.py **
+
+def rock_paper_scissors(player1, player2):
+
+    return "Tie" if player1 == player2 else "Player 1 wins" if (player1 == "Rock" and player2 == "Scissors") or (player1 == "Paper" and player2 == "Rock") or (player1 == "Scissors" and player2 == "Paper") else "Player 2 wins"
+
+print(rock_paper_scissors("Rock", "Rock")) # "Tie"
+
+** end of main.py **
+
