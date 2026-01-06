@@ -1,0 +1,18 @@
+** start of main.py **
+
+def vowel_case(s):
+
+    s_list = list(s)
+
+    res = list(map(lambda x: x.upper() if (x == "a" or x == "A" or x == "E" or x == "e" or x == "i" or x == "I" or x == "o" or x == "O" or x == "u" or x == "U") else x.lower(), s_list))
+
+    return "".join(res)
+
+print(vowel_case("vowelcase"))
+print(vowel_case("coding is fun"))
+print(vowel_case("HELLO, world!"))
+print(vowel_case("git cherry-pick"))
+print(vowel_case("HEAD~1"))
+
+** end of main.py **
+
