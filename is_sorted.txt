@@ -1,0 +1,33 @@
+** start of main.py **
+
+def is_sorted(arr):
+
+    ascending = sorted(arr)
+    # print(ascending)
+
+    descending = sorted(arr, reverse=True)
+    # print(descending)
+
+    return "Ascending" if arr == ascending else "Descending" if arr == descending else "Not sorted"
+
+
+print(is_sorted([1, 2, 3, 4, 5]))
+# "Ascending"
+
+print(is_sorted([10, 8, 6, 4, 2]))
+# "Descending"
+
+print(is_sorted([1, 3, 2, 4, 5]))
+# "Not sorted"
+
+print(is_sorted([3.14, 2.71, 1.61, 0.57])) 
+# "Descending"
+
+print(is_sorted([12.3, 23.4, 34.5, 45.6, 56.7, 67.8, 78.9]))
+# "Ascending"
+
+print(is_sorted([0.4, 0.5, 0.3]))
+# "Not sorted"
+
+** end of main.py **
+
