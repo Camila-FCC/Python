@@ -1,0 +1,56 @@
+** start of main.py **
+
+def tic_tac_toe(board):
+
+    first_h = "".join(board[0])
+    
+    second_h = "".join(board[1])
+
+    third_h = "".join(board[2])
+
+    first_v = "".join([board[0][0], board[1][0], board[2][0]])
+
+    second_v = "".join([board[0][1], board[1][1], board[2][1]])
+
+    third_v = "".join([board[0][2], board[1][2], board[2][2]])
+
+    diagonal1 = "".join([board[0][0], board[1][1], board[2][2]])
+
+    diagonal2 = "".join([board[0][2], board[1][1], board[2][0]])
+                          
+    winner_x = "X wins"
+    
+    winner_o = "O wins"
+    
+    draw = "Draw"
+
+    all_x = "X"*3
+    
+    all_o = "O"*3
+
+    full = [first_h, second_h, third_h, first_v, second_v, third_v, diagonal1, diagonal2]
+    
+    result = next((item for item in full if item == all_o or item == all_x), None)
+
+    return winner_o if result == all_o else winner_x if result == all_x else draw
+
+print(tic_tac_toe([["X", "X", "X"], ["O", "O", "X"], ["O", "X", "O"]]))
+# "X wins"
+
+print(tic_tac_toe([["X", "O", "X"], ["X", "O", "X"], ["O", "O", "X"]]))
+# "O wins"
+
+print(tic_tac_toe([["X", "O", "X"], ["O", "X", "O"], ["O", "X", "O"]]))
+# "Draw"
+
+print(tic_tac_toe([["X", "X", "O"], ["X", "O", "X"], ["O", "X", "X"]]))
+# "O wins"
+
+print(tic_tac_toe([["X", "O", "O"], ["O", "X", "O"], ["O", "X", "X"]]))
+# "X wins"
+
+print(tic_tac_toe([["O", "X", "X"], ["X", "O", "O"], ["X", "O", "X"]]))
+# "Draw"
+
+** end of main.py **
+
