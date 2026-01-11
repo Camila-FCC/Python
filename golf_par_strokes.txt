@@ -1,0 +1,18 @@
+** start of main.py **
+
+def golf_score(par, strokes):
+
+    if strokes == 1:
+        return "Hole in one!"
+    
+    if par == strokes:
+        return "Par"
+
+    calculate = strokes - par
+
+    return "Eagle" if calculate == -2 else "Birdie" if calculate == -1 else "Double bogey" if calculate == 2 else "Bogey" if calculate == 1 else ""
+
+print(golf_score(5, 3))
+
+** end of main.py **
+
