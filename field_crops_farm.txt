@@ -1,0 +1,48 @@
+** start of main.py **
+
+import math
+
+def get_number_of_plants(field_size, unit, crop):
+
+    acre = 4046.86
+    hectare = 10000
+
+    unit = unit.lower()
+    crop = crop.lower()
+
+    if unit == "acres":
+        unit = acre
+    
+    if unit == "hectares":
+        unit = hectare
+
+    crops = {
+        "corn": 1,
+        "wheat": 0.1,
+        "soybeans": 0.5,
+        "tomatoes": 0.25,
+        "lettuce": 0.2
+    }
+
+    number_of_plants = math.floor((field_size*unit)/crops[crop])
+
+    return number_of_plants
+
+
+print(get_number_of_plants(1, "acres", "corn"))
+# 4046
+
+print(get_number_of_plants(2, "hectares", "lettuce"))
+# 100000
+
+print(get_number_of_plants(20, "acres", "soybeans"))
+# 161874
+
+print(get_number_of_plants(3.75, "hectares", "tomatoes"))
+# 150000
+
+print(get_number_of_plants(16.75, "acres", "tomatoes"))
+# 271139
+
+** end of main.py **
+
