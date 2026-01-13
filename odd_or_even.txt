@@ -1,0 +1,11 @@
+** start of main.py **
+
+def odd_or_even(n):
+
+    return "Even" if n % 2 == 0 else "Odd"
+
+print(odd_or_even(45))
+
+
+** end of main.py **
+
