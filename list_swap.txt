@@ -1,0 +1,11 @@
+** start of main.py **
+
+def array_swap(arr):
+
+    return list(reversed(arr))
+
+print(array_swap(["A", "B"]))
+
+
+** end of main.py **
+
