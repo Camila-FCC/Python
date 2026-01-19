@@ -1,0 +1,17 @@
+** start of main.py **
+
+def compare_energy(calories_burned, watt_hours_used):
+
+    calories = 4184
+    wh_used = 3600
+
+    calories_burned *= calories
+    watt_hours_used *= wh_used
+
+    return "Workout" if calories_burned > watt_hours_used else "Devices" if calories_burned < watt_hours_used else "Equal"
+
+
+print(compare_energy(300, 75))
+
+** end of main.py **
+
