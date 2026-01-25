@@ -1,0 +1,25 @@
+** start of main.py **
+
+def scale_image(size, scale):
+
+    width = (float(size.split("x")[0])) * float(scale)
+
+    height = (float(size.split("x")[1])) * float(scale)
+
+    result = f'{round(width)}x{round(height)}'
+
+    return result
+
+
+## Given a string representing the width and height of an image, and a number to scale the image, return the scaled width and height.
+
+## The input string is in the format "WxH". For example, "800x600".
+
+## The scale is a number to multiply the width and height by.
+
+## Return the scaled dimensions in the same "WxH" format.
+
+print(scale_image("1024x768", 0.5))
+
+** end of main.py **
+
