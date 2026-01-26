@@ -1,0 +1,16 @@
+** start of main.py **
+
+from functools import reduce
+
+def get_average_grade(scores):
+
+    average_score = reduce(lambda x, y: x + y, scores) / len(scores)
+
+    return "F" if average_score < 60 else "D-" if average_score < 63 else "D" if average_score < 67 else "D+" if average_score < 70 else "C-" if average_score < 73 else "C" if average_score < 77 else "C+" if average_score < 80 else "B-" if average_score < 83 else "B" if average_score < 87 else "B+" if average_score < 90 else "A-" if average_score < 93 else "A" if average_score < 97 else "A+" if average_score < 101 else False
+
+
+print(get_average_grade([92, 91, 90, 94, 89, 93]))
+# return "A-"
+
+** end of main.py **
+
