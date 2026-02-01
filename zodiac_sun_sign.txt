@@ -1,0 +1,75 @@
+** start of main.py **
+
+def get_sign(date_str):
+
+    month = int(date_str.split("-")[1])
+  
+    day = int(date_str.split("-")[2])
+
+    # December 22 - January 19
+    if((month == 12 and day > 21) or (month == 1 and day < 20)):
+        return "Capricorn"
+
+    # January 20 - February 18
+    if((month == 1 and day > 19) or (month == 2 and day < 19)):
+        return "Aquarius"
+
+    # February 19 - March 20
+    if((month == 2 and day > 18) or (month == 3 and day < 21)):
+        return "Pisces"
+
+    # November 22 - December 21
+    if((month == 11 and day > 21) or (month == 12 and day < 22)):
+        return "Sagittarius"
+
+    # March 21 - April 19
+    if((month == 3 and day > 20) or (month == 4 and day < 20)):
+        return "Aries"
+
+    # April 20 - May 20
+    if((month == 4 and day > 19) or (month == 5 and day < 21)):
+        return "Taurus"
+
+    # May 21 - June 20
+    if((month == 5 and day > 20) or month == 6 and day < 21):
+        return "Gemini"
+
+    # June 21 - July 22
+    if((month == 6 and day > 20) or (month == 7 and day < 23)):
+        return "Cancer"
+
+    # July 23 - August 22
+    if((month == 7 and day > 22) or (month == 8 and day < 23)):
+        return "Leo"
+
+    # August 23 - September 22
+    if((month == 8 and day > 22) or (month == 9 and day < 23)):
+        return "Virgo"
+
+    # September 23 - October 22
+    if((month == 9 and day > 22) or (month == 10 and day < 23)):
+        return "Libra"
+
+    # October 23 - November 21
+    if((month == 10 and day > 22) or (month == 11 and day < 22)):
+        return "Scorpio"
+
+
+print(get_sign("2026-01-31"));
+# "Aquarius"
+
+print(get_sign("2001-06-10"));
+# "Gemini"
+
+print(get_sign("1985-09-07"));
+# "Virgo"
+
+print(get_sign("2023-03-19"));
+# "Pisces"
+
+print(get_sign("2025-12-30"));
+# "Capricorn"
+
+
+** end of main.py **
+
