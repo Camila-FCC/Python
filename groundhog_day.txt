@@ -1,0 +1,24 @@
+** start of main.py **
+
+def groundhog_day_prediction(appearance):
+
+    return "Looks like we'll have six more weeks of winter." if appearance == True else "It's going to be an early spring." if appearance == False else "No prediction this year."
+    
+
+print(groundhog_day_prediction(True))
+# "Looks like we'll have six more weeks of winter."
+
+print(groundhog_day_prediction(False))
+# "It's going to be an early spring."
+
+print(groundhog_day_prediction(None))
+# "No prediction this year."
+
+print(groundhog_day_prediction(" "))
+# "No prediction this year."
+
+print(groundhog_day_prediction("True"))
+# "No prediction this year."
+
+** end of main.py **
+
