@@ -1,0 +1,23 @@
+** start of main.py **
+
+def truncate_text(text):
+
+    textLength = len(text)
+
+    return text[0:17] + "..." if textLength > 20 else text
+
+
+print(truncate_text("Hello, world!"))
+# "Hello, world!"
+
+print(truncate_text("This string should get truncated."))
+# "This string shoul..."
+
+print(truncate_text("Exactly twenty chars"))
+# "Exactly twenty chars"
+
+print(truncate_text("....................."))
+# "...................."
+
+** end of main.py **
+
