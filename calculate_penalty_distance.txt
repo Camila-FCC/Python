@@ -1,0 +1,38 @@
+** start of main.py **
+
+def calculate_penalty_distance(rounds):
+
+    penalty = 150
+    # meters
+
+    my_list = []
+
+    i = 0
+
+    while i < len(rounds):
+
+        if rounds[i] < 5:
+            my_list.append(abs(rounds[i] - 5))
+
+        i += 1
+
+    return sum(my_list) * penalty
+
+
+print(calculate_penalty_distance([4, 4]))
+# 300
+
+print(calculate_penalty_distance([5, 5])) 
+# 0
+
+print(calculate_penalty_distance([4, 5, 3, 5])) 
+# 450
+
+print(calculate_penalty_distance([5, 4, 5, 5]))
+# 150
+
+print(calculate_penalty_distance([4, 3, 0, 3])) 
+# 1500
+
+** end of main.py **
+
