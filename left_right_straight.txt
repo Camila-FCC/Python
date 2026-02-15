@@ -1,0 +1,35 @@
+** start of main.py **
+
+import re
+
+def get_difficulty(track):
+
+    pts_15 = len(re.findall("lr|rl", track, re.I|re.M)) * 15
+
+    pts_5 = len(re.findall("ls|sl|rs|sr|l{1}|r{1}", track, re.I|re.M)) * 5
+
+    total = pts_15 + pts_5
+    
+    return "Easy" if total <= 100 else "Medium" if total <= 200 else "Hard" if total > 200 else ""
+
+
+print(get_difficulty("SLSLLSRRLSRLRL"))
+# "Easy"
+
+print(get_difficulty("LLRSLRLRSLLRLRSLRRLRSRLLS"))
+# "Hard"
+
+print(get_difficulty("SRRRRLSLLRLRSSRLSRL"))
+# "Medium"
+
+print(get_difficulty("LSRLRLSRLRLSLRSLRLLRLSRLRLRSL"))
+# "Hard"
+
+print(get_difficulty("SLLSSLRLSLSLRSLSSLRL"))
+# "Medium"
+
+print(get_difficulty("SRSLSRSLSRRSLSRSRSLSRLSRSR"))
+# "Easy"
+
+** end of main.py **
+
