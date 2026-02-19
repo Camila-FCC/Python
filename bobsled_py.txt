@@ -1,0 +1,29 @@
+** start of main.py **
+
+def check_eligibility(athlete_weights, sled_weight):
+
+    team_length = len(athlete_weights)
+    #print(team_length)
+
+    total_weight = sum(athlete_weights) + sled_weight
+
+
+    if (sled_weight < 162 and team_length == 1) or (sled_weight < 170 and team_length == 2) or (sled_weight < 210 and team_length == 4):
+        return "Not Eligible"
+    
+    if (total_weight > 247 and team_length == 1) or (total_weight > 390 and team_length == 2) or (total_weight > 630 and team_length == 4):
+        return "Not Eligible"
+    
+    return "Eligible"
+
+
+
+
+print(check_eligibility([110, 102, 90, 106], 222)) 
+# "Eligible"
+
+print(check_eligibility([106, 99, 90, 88], 205))
+# "Not Eligible"
+
+** end of main.py **
+
