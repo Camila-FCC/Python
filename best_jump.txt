@@ -1,0 +1,31 @@
+** start of main.py **
+
+import math
+
+def calculate_start_delays(jump_scores):
+
+    best_jump = max(jump_scores)
+    
+    #print(best_jump)
+
+    i = 0
+
+    delay = []
+
+    while i < len(jump_scores):
+
+        calculate = math.ceil((best_jump - jump_scores[i]) * 1.5)
+
+        delay.append(calculate)
+
+        i += 1
+
+    return delay
+
+
+print(calculate_start_delays([130, 125, 128, 120, 118, 122, 127, 115, 132, 124])) 
+
+# [3, 11, 6, 18, 21, 15, 8, 26, 0, 12])
+
+** end of main.py **
+
