@@ -1,0 +1,31 @@
+** start of main.py **
+
+def is_valid_trick(trick_name):
+
+    first_name = trick_name.split(" ")[0]
+
+    second_name = trick_name.split(" ")[1]
+
+    first_name_list = ["Misty", "Ghost", "Thunder", "Phantom", "Solar", "Sky", "Polar", "Frozen"]
+
+    second_name_list = ["Twister", "Icequake", "Avalanche", "Vortex", "Snowstorm", "Blizzard", "Frostbite", "Shadow"]
+
+    valid_first_name = first_name in first_name_list
+
+    if valid_first_name:
+
+        valid_second_name = second_name in second_name_list
+
+        if valid_second_name:
+            return True
+    
+    return False
+
+print(is_valid_trick("Ghost Avalanche"))
+#True
+
+print(is_valid_trick("Snowstorm Shadow"))
+#False
+
+** end of main.py **
+
