@@ -1,0 +1,32 @@
+** start of main.py **
+
+def get_fastest_speed(times):
+
+    distance_segments = [320, 280, 350, 300, 250]
+    # in meters
+
+    calculate_speed = []
+
+    i = 0
+
+    while i < len(times):
+
+        speed = distance_segments[i]/times[i]
+
+        calculate_speed.append(float(f"{speed:.2f}"))
+
+        i += 1
+
+    fastest_speed = max(calculate_speed)
+
+    segment_position = calculate_speed.index(fastest_speed) + 1
+
+    return f"The luger's fastest speed was {fastest_speed} m/s on segment {segment_position}."
+
+
+print(get_fastest_speed([9.381, 7.417, 9.912, 8.815, 7.284])) 
+
+# "The luger's fastest speed was 37.75 m/s on segment 2."
+
+** end of main.py **
+
