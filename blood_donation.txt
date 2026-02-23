@@ -1,0 +1,44 @@
+** start of main.py **
+
+import re
+
+def can_donate(donor, recipient):
+
+    donor_rh = "".join(re.findall(r"\-|\+", str(donor), re.I))
+    
+    recipient_rh = "".join(re.findall(r"\-|\+", str(recipient), re.I))
+
+    donor_letter = "".join(re.findall(r"[a|b|(ab)|o]", str(donor), re.I))
+  
+    recipient_letter = "".join(re.findall(r"[o|a|b|(ab)]", str(recipient), re.I))
+
+    #print(donor_letter)
+
+    if donor_rh == "+" and recipient_rh == "-":
+        return False
+
+    if (donor_letter == "A" and recipient_letter == "O") or (donor_letter == "A" and recipient_letter == "B"):
+        return False
+
+    if (donor_letter == "B" and recipient_letter == "O") or (donor_letter == "B" and recipient_letter == "A"):
+        return False
+
+    if donor_letter == "AB" and recipient_letter != "AB":
+        return False
+    
+    return True
+
+    
+
+
+print(can_donate("O+", "A-"))
+# False
+
+print(can_donate("A+", "AB+"))
+# True
+
+print(can_donate("A-", "B-"))
+# False
+
+** end of main.py **
+
