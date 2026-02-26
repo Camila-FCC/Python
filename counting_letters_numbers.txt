@@ -1,0 +1,33 @@
+** start of main.py **
+
+import re
+
+def count_letters_and_numbers(s):
+
+    letters = 0
+    numbers = 0
+
+    letters = len(re.findall(r"[a-z]", s, re.I | re.M))
+
+    numbers = len(re.findall(r"[0-9]", s, re.I | re.M))
+
+    return f'The string has {letters} {"letter" if letters == 1 else "letters"} and {numbers} {"number" if numbers == 1 else "numbers"}.'
+
+
+print(count_letters_and_numbers("helloworld123"))
+# "The string has 10 letters and 3 numbers."
+
+print(count_letters_and_numbers("Catch 22"))
+# "The string has 5 letters and 2 numbers."
+
+print(count_letters_and_numbers("A1!"))
+# "The string has 1 letter and 1 number."
+
+print(count_letters_and_numbers("12345"))
+# "The string has 0 letters and 5 numbers."
+
+print(count_letters_and_numbers("password"))
+# "The string has 8 letters and 0 numbers."
+
+** end of main.py **
+
