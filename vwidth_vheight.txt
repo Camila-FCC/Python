@@ -1,0 +1,51 @@
+** start of main.py **
+
+import re
+
+def get_element_size(window_size, element_vw, element_vh):
+
+    window_size = window_size.split("x")
+    
+    item_ws = list(map(lambda x: x.strip(), window_size))
+
+    #print(item_ws)
+
+    element_vw = element_vw[:-2]
+
+    element_vh = element_vh[:-2]
+
+    calc_vw = int(item_ws[0]) * (int(element_vw)/100)
+
+    calc_vh = int(item_ws[1]) * (int(element_vh)/100)
+
+    return f"{str(calc_vw)[:-2]} x {str(calc_vh)[:-2]}"
+
+
+
+print(get_element_size("1200 x 800", "50vw", "50vh"))
+
+# "600 x 400"
+
+
+print(
+get_element_size("320 x 480", "25vw", "50vh"))
+# "80 x 240"
+
+
+print(get_element_size("1000 x 500", "7vw", "3vh"))
+# "70 x 15"
+
+
+print(get_element_size("1920 x 1080", "95vw", "100vh"))
+# "1824 x 1080"
+
+
+print(get_element_size("1200 x 800", "0vw", "0vh"))
+# "0 x 0"
+
+
+print(get_element_size("1440 x 900", "100vw", "114vh"))
+# "1440 x 1026"
+
+** end of main.py **
+
