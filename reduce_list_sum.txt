@@ -1,0 +1,18 @@
+** start of main.py **
+
+from functools import reduce
+
+def sum_array(numbers):
+
+    calc = reduce(lambda x, y: x + y, numbers)
+
+    return calc
+
+
+
+print(sum_array([203, 145, -129, 6293, 523, -919, 845, 2434]))
+
+# 9395
+
+** end of main.py **
+
