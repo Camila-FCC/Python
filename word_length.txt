@@ -1,0 +1,18 @@
+** start of main.py **
+
+def convert_words(s):
+
+    s = s.split(" ")
+
+    word_length = list(map(lambda w: str(len(w)), s))
+
+    return " ".join(word_length)
+
+
+print(
+convert_words("Lorem ipsum dolor sit amet consectetur adipiscing elit donec ut ligula vehicula iaculis orci vel semper nisl"))
+
+# "5 5 5 3 4 11 10 4 5 2 6 8 7 4 3 6 4"
+
+** end of main.py **
+
