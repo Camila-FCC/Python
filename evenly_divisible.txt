@@ -1,0 +1,15 @@
+** start of main.py **
+
+def is_evenly_divisible(a, b):
+
+    return a % b == 0
+
+print(
+is_evenly_divisible(3186, 9))
+# True
+
+print(is_evenly_divisible(4192, 11))
+# False
+
+** end of main.py **
+
