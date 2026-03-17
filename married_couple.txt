@@ -1,0 +1,14 @@
+** start of main.py **
+
+def get_milestone(years):
+
+    years = "Platinum" if years >= 70 else "Diamond" if years >= 60 else "Gold" if years >= 50 else "Ruby" if years >= 40 else "Silver" if years >= 25 else "Tin" if years >= 10 else "Wood" if years >= 5 else "Paper" if years >= 1 else "Newlyweds"
+
+    return years
+
+
+print(get_milestone(26))
+# "Silver"
+
+** end of main.py **
+
