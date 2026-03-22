@@ -1,0 +1,42 @@
+** start of main.py **
+
+def detect_roast(beans):
+
+    beans.split()
+
+    light = len(list(filter(lambda x : x == "/" or x == "'", beans))) * 1
+
+    medium = len(list(filter(lambda x : x == "-", beans))) * 2
+
+    dark = len(list(filter(lambda x : x == ".", beans))) * 3
+
+    total = len(beans)
+
+    average = (light + medium + dark) / total
+
+    return "Light" if average < 1.75 else "Medium" if average >= 1.75 and average <= 2.5 else "Dark"
+
+
+print(detect_roast("''-''''''-'-''--''''"))
+# "Light"
+
+print(detect_roast(".'-''-''..'''.-.-''-")) 
+# "Medium"
+
+print(detect_roast("--.''--'-''.--..-.--"))
+# "Medium"
+
+print(detect_roast("-...'-......-..-...-"))
+# "Dark"
+
+print(detect_roast(".--.-..-......----.'"))
+# "Medium"
+
+print(detect_roast("..-..-..-..-....-.-."))
+# "Dark"
+
+print(detect_roast("-'-''''''..-'.''-'.'"))
+# "Light"
+
+** end of main.py **
+
