@@ -1,0 +1,34 @@
+** start of main.py **
+
+def has_no_repeats(s):
+
+    s = list(s)
+
+    s = list(filter(lambda x : x != " ", s))
+
+    repeat_in_a_row = False
+
+    #print(s)
+
+    try:
+
+        i = 0
+
+        while i < len(s):
+
+            if(s[i] == s[i+1]):
+                repeat_in_a_row = True
+
+            i += 1
+    
+    except:
+        pass
+
+    return repeat_in_a_row == False
+
+print(has_no_repeats("The quick brown fox jumped over the lazy dog.")) # True
+
+print(has_no_repeats("Mississippi")) # False
+
+** end of main.py **
+
