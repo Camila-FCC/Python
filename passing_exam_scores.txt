@@ -1,0 +1,14 @@
+** start of main.py **
+
+def passing_count(scores, passing_score):
+
+    scores = len(list(filter(lambda x : x >= passing_score, scores)))
+
+    return scores
+
+print(passing_count([84, 65, 98, 53, 58, 71, 91, 80, 92, 70, 73, 83, 86, 69, 84, 77, 72, 58, 69, 75, 66, 68, 72, 96, 90, 63, 88, 63, 80, 67], 60))
+
+# should return 27
+
+** end of main.py **
+
