@@ -1,0 +1,72 @@
+** start of main.py **
+
+def get_movie_night_cost(day, showtime, number_of_tickets):
+
+    price = 0
+
+    weekend = ["Friday", "Saturday", "Sunday"]
+
+    weekday = ["Monday", "Tuesday", "Wednesday", "Thursday"]
+
+    matinee = (int(showtime.split(":")[0]) < 5 and showtime[len(showtime)-2:] == "pm") or (showtime[len(showtime)-2:] == "am" and int(showtime.split(":")[0]) < 12)
+
+    #print("Matinee? (before 5pm)" + " " + matinee)
+
+    if day in weekday:
+
+        price = number_of_tickets * 10.00
+
+        if matinee:
+            
+            price -= (number_of_tickets * 2.00)
+
+        if day == "Tuesday":
+            
+            price = number_of_tickets * 5.00
+
+
+    if day in weekend:
+
+        price = number_of_tickets * 12.00
+
+        if matinee:
+            
+            price -= (number_of_tickets * 2.00)
+      
+
+    return f'${format(price, ".2f")}'
+
+
+print(get_movie_night_cost("Saturday", "10:00pm", 1))
+# "$12.00"
+
+print(get_movie_night_cost("Sunday", "10:00am", 1))
+# "$10.00"
+
+print(get_movie_night_cost("Tuesday", "7:20pm", 2))
+# "$10.00"
+
+print(get_movie_night_cost("Wednesday", "5:40pm", 3))
+# "$30.00"
+
+print(get_movie_night_cost("Monday", "11:50am", 4))
+# "$32.00"
+
+print(get_movie_night_cost("Friday", "4:30pm", 5))
+# "$50.00"
+
+print(get_movie_night_cost("Tuesday", "11:30am", 1))
+# "$5.00"
+
+
+# Weekend (Friday - Sunday): $12.00 per ticket.
+
+# Weekday (Monday - Thursday): $10.00 per ticket.
+
+# Matinee (before 5:00pm): subtract $2.00 per ticket (except on Tuesdays).
+
+# Tuesdays: all tickets are $5.00 each.
+
+
+** end of main.py **
+
