@@ -1,0 +1,33 @@
+** start of main.py **
+
+def is_valid_isbn10(s):
+
+    s_list = list(filter(lambda x : x != "-", s))
+
+    numbers = list(map(lambda x : 10 if x == "X" else int(float(x)), s_list))
+
+    position = 1
+    index = 0
+
+    while index < len(numbers):
+
+        numbers[index] *= position
+
+        index += 1
+        position += 1
+
+    final = sum(numbers) / 11
+
+    valid_isbn = True if str(final)[-2:] == ".0" else False
+
+    return valid_isbn
+    
+
+print(is_valid_isbn10("0-306-40615-1"))
+# False
+
+print(is_valid_isbn10("0-8044-2957-X"))
+# True
+
+** end of main.py **
+
