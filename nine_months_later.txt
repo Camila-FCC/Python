@@ -1,0 +1,44 @@
+** start of main.py **
+
+def get_due_date(date_str):
+
+    year = int(date_str[0:4])
+
+    month = int(date_str[5:7])
+
+    day = int(date_str[-2:])
+
+    nine_months_later = (month + 9) % 12
+
+    last_day_thirty = [4, 6, 9, 11]
+
+    #print(nine_months_later)
+
+    if month >= 4:
+        year += 1
+
+    if month == 3:
+        nine_months_later = 12
+
+    if len(str(nine_months_later)) == 1:
+        nine_months_later = "0" + str(nine_months_later)
+
+    if nine_months_later in last_day_thirty and day == 31:
+        return f'{year}-{nineMonthsLater}-30'
+
+    if nine_months_later == "02" and day > 28:
+        return f'{year}-{nine_months_later}-28'
+
+    return f'{year}-{nine_months_later}-{day}'
+
+
+
+print(get_due_date("2025-05-29"))
+# "2026-02-28"
+
+
+print(get_due_date("2025-03-30"))
+# "2025-12-30"
+
+** end of main.py **
+
