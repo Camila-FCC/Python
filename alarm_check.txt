@@ -1,0 +1,50 @@
+** start of main.py **
+
+def alarm_check(alarm_time, wake_time):
+
+    # 24h format
+
+    hour_alarm = int(alarm_time.split(":")[0])
+    #print(hour_alarm)
+
+    hour_wake = int(wake_time.split(":")[0])
+    #print(hour_wake)
+
+    min_alarm = int(alarm_time.split(":")[1])
+    #print(min_alarm)
+
+    min_wake = int(wake_time.split(":")[1])
+    #print(min_wake)
+
+    if hour_wake >= hour_alarm:
+
+        if (min_wake - min_alarm) > 10:
+            
+            return "late"
+                              
+    if hour_wake <= hour_alarm:
+
+        if abs(min_alarm - min_wake) <= 10:
+
+            return "on time"
+
+        return "early"
+
+
+print(alarm_check("07:00", "06:45")) # "early"
+
+print(alarm_check("06:30", "06:30")) # "on time"
+
+print(alarm_check("08:10", "08:15")) # "on time"
+
+print(alarm_check("09:30", "09:45")) # "late"
+
+print(alarm_check("08:15", "08:25")) # "on time"
+
+print(alarm_check("05:45", "05:56")) # "late"
+
+print(alarm_check("04:30", "04:00")) # "early"
+
+
+** end of main.py **
+
