@@ -1,0 +1,93 @@
+** start of main.py **
+
+import re
+
+def is_valid_equation(equation):
+
+    left_side = str(equation.split("=")[0])
+    
+    re.findall(r'(\d+\s(\+|\-|\*|\/)\s\d+\s)([\+\-\*\/]\s\d+\s)*', left_side, re.M)
+
+    left = "".join(list(filter(lambda x : x != " ", left_side)))
+
+    right_side = str(equation.split("=")[1])
+
+    operators = "".join(re.findall(r'[\+\/\-\*]', left, re.M))
+  
+    left = re.split(r"\*|\/|\+|\-", left)
+
+    for x in left:
+        if x == "+" or x == "-" or x == "/" or x == "*":
+            x = ""
+
+    calc = list(map(lambda x : float(x), left))
+
+    i = 0
+    x = None
+    y = None
+    z = None
+
+    while i < len(calc):
+
+        if i == 0:
+            x = calc[i]
+
+        elif i == 1:
+            y = calc[i]
+
+        elif i == 2:
+            z = calc[i]
+
+        else:
+            return "Two or three numbers on the left side and the operands. For x, y, z, they must be numbers or digits."
+        
+        i += 1
+    
+    
+    def arithmetic(x, y, z):
+
+        if len(calc) == 2:
+
+            return x+y if operators == "+" else x-y if operators == "-" else x*y if operators == "*" else x/y if operators == "/" else "Only + - * / are OK."
+
+        if len(calc) == 3:
+
+            return x+y-z if operators == "+-" else x-y+z if operators == "-+" else x*y/z if operators == "*/" else x/y*z if operators == "/*" else x+(y/z) if operators == "+/" else (x/y)+z if operators == "/+" else x-(y/z) if operators == "-/" else (x/y)-z if operators == "/-" else x+y+z if operators == "++" else x-y-z if operators == "--" else x*y*z if operators == "**" else (x/y)/z if operators == "//" else (x*y)-z if operators == "*-" else x-y*z if operators == "-*" else x+(y*z) if operators == "+*" else (x*y)+z if operators == "*+" else "???"
+
+    result = float(right_side) == arithmetic(x,y,z)
+
+    return result
+    
+
+print(is_valid_equation("2 + 2 = 4"))
+# True
+
+print(is_valid_equation("2 + 3 - 1 = 4"))
+# True
+
+print(is_valid_equation("8 / 2 = 4")) 
+# True
+
+print(is_valid_equation("10 * 5 = 50"))
+# True
+
+print(is_valid_equation("2 - 2 = 0")) 
+# True
+
+print(is_valid_equation("2 + 9 / 3 = 5"))
+# True
+
+print(is_valid_equation("20 - 2 * 3 = 14")) 
+# True
+
+print(is_valid_equation("2 + 5 = 6"))
+# False
+
+print(is_valid_equation("10 - 2 * 3 = 24"))
+# False
+
+print(is_valid_equation("3 + 9 / 3 = 4"))
+# False
+
+** end of main.py **
+
