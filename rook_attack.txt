@@ -1,0 +1,33 @@
+** start of main.py **
+
+import re
+
+def rook_attack(rook1, rook2):
+
+    rook1abc = re.findall(r'[A-H]', rook1)[0]
+    #print(rook1abc)
+
+    rook2abc = re.findall(r'[A-H]', rook2)[0]
+    #print(rook2abc)
+
+    rook1num = re.findall(r'[1-8]', rook1)[0]
+    #print(rook1num)
+
+    rook2num = re.findall(r'[1-8]', rook2)[0]
+    #print(rook2num)
+
+    # same column (abc)
+    # same row (num)
+    
+    return (rook1abc == rook2abc) or (rook1num == rook2num)
+
+
+print(rook_attack("B4", "F4"))
+#true
+
+print(rook_attack("E3", "D4"))
+#false
+
+
+** end of main.py **
+
