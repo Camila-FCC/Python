@@ -1,0 +1,64 @@
+** start of main.py **
+
+def find_org(acronym):
+
+    nasa = "National Avocado Storage Authority"
+
+    cia = "Cats Infiltration Agency"
+
+    fbi = "Fluffy Beanbag Inspectors"
+
+    doj = "Department Of Jelly"
+
+    who = "Wild Honey Organization"
+
+    epa = "Eating Pancakes Administration"
+
+    return nasa if acronym == "NASA" else cia if acronym == "CIA" else fbi if acronym == "FBI" else doj if acronym == "DOJ" else who if acronym == "WHO" else epa if acronym == "EPA" else "Not possible."
+
+
+
+# Acronym Finder
+
+# Given a string representing an acronym, return the full name of the organization it belongs to from the list below:
+
+# "National Avocado Storage Authority"
+
+# "Cats Infiltration Agency"
+
+# "Fluffy Beanbag Inspectors"
+
+# "Department Of Jelly"
+
+# "Wild Honey Organization"
+
+# "Eating Pancakes Administration"
+
+# Each letter in the given acronym should match the first letter of each word in the organization it belongs to, in the same order.
+
+
+print(find_org("NASA"))
+# "National Avocado Storage Authority"
+
+print(find_org("CIA"))
+
+# "Cats Infiltration Agency"
+
+print(find_org("FBI"))
+# "Fluffy Beanbag Inspectors"
+
+print(find_org("DOJ"))
+
+# "Department Of Jelly"
+
+print(find_org("WHO"))
+
+# "Wild Honey Organization"
+
+print(find_org("EPA"))
+
+# "Eating Pancakes Administration"
+
+
+** end of main.py **
+
