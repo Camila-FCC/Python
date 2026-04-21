@@ -1,0 +1,18 @@
+** start of main.py **
+
+def get_odd_words(s):
+
+    s = s.split(" ")
+    
+    ss = list(filter(lambda x: ((len(x) % 2) != 0), s))
+
+    result = " ".join(ss)
+
+    return result
+
+print(get_odd_words("The quick brown fox jumped over the lazy river"))
+
+# "The quick brown fox the river"
+
+** end of main.py **
+
