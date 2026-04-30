@@ -1,0 +1,46 @@
+** start of main.py **
+
+def is_in_crossword(char):
+
+    # Binary Grid (8-bit):
+
+    # 0 1 0 0 0 0 0 1
+    # 0 1 1 0 1 1 1 1
+    # 0 1 0 0 0 1 0 0
+    # 0 1 1 0 0 1 0 1
+    # 0 1 0 1 0 0 1 0
+    # 0 1 0 1 0 1 0 0
+    # 0 1 1 0 1 0 0 0
+    # 1 0 1 0 1 1 1 0
+
+    horizontal = ["01000001", "01101111", "01000100", "01100101", "01010010", "01010100", "01101000", "10101110"]
+
+    vertical = ["00000001", "11111110", "01010011", "00001100", "01000011", "01110101", "01001001", "11010000"]
+
+    horizontal_rev = [bi[::-1] for bi in horizontal]
+
+    vertical_rev = [bi[::-1] for bi in vertical]
+
+    #print(horizontal_rev)
+    #print(vertical_rev)
+
+    conversion = format(ord(char), '08b')
+
+    if conversion in vertical or conversion in horizontal:
+        return True
+        
+    if conversion in vertical_rev or conversion in horizontal_rev:
+        return True
+        
+    return False
+
+
+print(is_in_crossword("p"))
+# False
+
+print(is_in_crossword("D"))
+# True
+
+
+** end of main.py **
+
