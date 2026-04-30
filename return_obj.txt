@@ -1,0 +1,42 @@
+** start of main.py **
+
+def parse_url_query(url):
+
+    url = url[url.index("?")+1:].split("&")
+
+    i = 0
+
+    url_obj = {}
+
+    while i < len(url):
+
+        key = url[i].split("=")[0]
+
+        val = url[i].split("=")[1]
+
+        url_obj[key] = val
+
+        i+=1
+
+    return url_obj
+
+
+print(parse_url_query("https://example.com/search?name=Alice&age=30"))
+
+# should return {"name": "Alice", "age": "30"}
+
+print(parse_url_query("https://freecodecamp.org/learn?skill=programming&language=python"))
+
+# should return {"skill": "programming", "language": "python"}
+
+print(parse_url_query("https://freecodecamp.org/items?category=books&sort=asc&page=2"))
+
+# should return {"category": "books", "sort": "asc", "page": "2"}
+
+print(parse_url_query("https://example.com?redirect=freecodecamp.org/learn&when=now"))
+
+# should return {"redirect": "freecodecamp.org/learn", "when": "now"}
+
+
+** end of main.py **
+
