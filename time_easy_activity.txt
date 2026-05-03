@@ -1,0 +1,28 @@
+** start of main.py **
+
+def get_greeting(s):
+
+    hour = int(s.split(":")[0])
+
+    minutes = int(s.split(":")[1])
+
+    return "Good morning" if hour >= 5 and hour <= 11 else "Good afternoon" if hour >= 12 and hour <= 17 else "Good evening" if hour >= 18 and hour <= 21 else "Good night"
+    
+
+print(get_greeting("06:30"))
+# "Good morning"
+
+print(get_greeting("12:00"))
+# "Good afternoon"
+
+print(get_greeting("21:59")) 
+# "Good evening"
+
+print(get_greeting("00:01")) 
+# "Good night"
+
+print(get_greeting("11:30")) 
+# "Good morning"
+
+** end of main.py **
+
