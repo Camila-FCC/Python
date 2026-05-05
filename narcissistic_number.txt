@@ -1,0 +1,53 @@
+** start of main.py **
+
+from functools import reduce
+
+def is_narcissistic(n):
+
+    digits = len(str(n))
+
+    digits_list = []
+
+    i = 0
+
+    while i < digits:
+
+        n = str(n)
+
+        digits_list.append(int(n[i]))
+
+        i+=1
+    
+    power = list(map(lambda x: x**digits, digits_list))
+
+    result = reduce(lambda x, y : x+y, power)
+
+    return int(result) == int(n)
+    
+
+print(is_narcissistic(153)) 
+# true
+
+print(is_narcissistic(154)) 
+# false
+
+print(is_narcissistic(371)) 
+# true
+
+print(is_narcissistic(512)) 
+# false
+
+print(is_narcissistic(9)) 
+# true
+
+print(is_narcissistic(11)) 
+# false
+
+print(is_narcissistic(9474)) 
+# true
+
+print(is_narcissistic(6549)) 
+# false
+
+** end of main.py **
+
