@@ -1,0 +1,35 @@
+** start of main.py **
+
+def convert_parsecs(parsecs):
+
+    odd_or_even = "odd" if parsecs % 2 != 0 else "even"
+
+    if odd_or_even == "odd":
+        parsecs *= 2
+    
+    if odd_or_even == "even":
+        parsecs *= 3
+    
+    return parsecs
+
+
+print(convert_parsecs(1))
+# 2
+
+print(convert_parsecs(2)) 
+# 6
+
+print(convert_parsecs(31)) 
+# 62
+
+print(convert_parsecs(88))
+# 264
+
+print(convert_parsecs(17)) 
+# 34
+
+print(convert_parsecs(14))
+# 42
+
+** end of main.py **
+
