@@ -1,0 +1,26 @@
+** start of main.py **
+
+def get_frequency(s):
+
+    s = list(s)
+    #print(s)
+
+    obj_str = {}
+
+    i = 0
+
+    while i < len(s):
+
+        obj_str[f'{s[i]}'] = len(list(filter(lambda x : x == s[i], s)))
+
+        i+=1
+
+    return obj_str
+
+
+print(get_frequency("She sells seashells by the seashore."))
+
+# {S: 1, h: 4, e: 7, " ": 5, s: 7, l: 4, a: 2, b: 1, y: 1, t: 1, o: 1, r: 1, ".": 1})
+
+** end of main.py **
+
