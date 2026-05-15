@@ -1,0 +1,64 @@
+** start of main.py **
+
+from functools import reduce
+
+def format_coffee_order(order):
+  
+    prices = [
+    ["cold brew",	4.50],
+    ["oat latte",	5.00],["cappuccino",	4.75],
+    ["espresso",	3.00],
+    ["vanilla syrup",	0.75],["caramel drizzle", 0.60],
+    ["extra shot", 0.50],
+    ["oat milk", 0.75],
+    ["cream", 0.75]
+    ]
+
+    i = 0
+  
+    result = []
+
+    calculate = []
+
+    while i < len(prices):
+
+        if (prices[i][0]) in order:
+
+            result.append(prices[i][0])
+
+            calculate.append(prices[i][1])
+    
+        i+=1
+  
+
+    calculate = reduce(lambda x,y : x+y, calculate)
+
+    calculate_str = ": $" + "{:.2f}".format(calculate)
+
+    result = " + ".join(result)
+
+    return result + calculate_str
+  
+
+print(format_coffee_order("I'd like an oat latte with vanilla syrup and an extra shot please."))
+
+# "oat latte + vanilla syrup + extra shot: $6.25"
+
+print(format_coffee_order("Give me a cappuccino with caramel drizzle, vanilla syrup, and some oat milk."))
+
+# "cappuccino + vanilla syrup + caramel drizzle + oat milk: $6.85"
+
+print(format_coffee_order("Can I get a cold brew with some cream and an extra shot."))
+
+# "cold brew + extra shot + cream: $5.75"
+
+print(format_coffee_order("Just an espresso please."))
+
+# "espresso: $3.00"
+
+print(format_coffee_order("I'll take an oat latte with cream and an extra shot, and some vanilla syrup and caramel drizzle."))
+
+# "oat latte + vanilla syrup + caramel drizzle + extra shot + cream: $7.60"
+
+** end of main.py **
+
