@@ -1,0 +1,71 @@
+** start of main.py **
+
+def is_mirror_image(str1, str2):
+
+    symmetric_chars = "WTYUIOHAXVMwoxv08=+:|-_*^!. "
+
+    chars = "[{(<bp"
+    #chars = list(chars)
+    
+    swap_chars = "]})>dq"
+    #swap_chars = list(swap_chars)
+  
+    str2 = list(str2)[::-1]
+
+    i = 0
+    j = 0
+    changed = []
+
+    while i < len(str2):
+
+        if(chars.find(str2[i]) != -1 and len(list(filter(lambda x : x == i, changed))) == 0):
+
+            str2[i] = swap_chars[chars.find(str2[i])]
+
+            changed.append(i)
+
+
+        i+=1
+  
+
+    while j < len(str2):
+    
+        if(swap_chars.find(str2[j]) != -1 and len(list(filter(lambda x : x == j, changed))) == 0):
+
+            str2[j] = chars[swap_chars.find(str2[j])]
+
+            changed.append(j)
+
+        j+=1
+  
+
+    return "".join(str2) == str1
+
+
+print(is_mirror_image("[HOW]", "[WOH]"))
+# True
+
+print(is_mirror_image("MOM", "MOM"))
+# True
+
+print(is_mirror_image("vow", "wov"))
+# True
+
+print(is_mirror_image("TIM", "TIM"))
+# False
+
+print(is_mirror_image("{WOW}", "}WOW{"))
+# False
+
+print(is_mirror_image("XXVII", "IIV%X"))
+# False
+
+print(is_mirror_image("><(((*>", "<*)))><"))
+# True
+
+print(is_mirror_image("WTYUIOHAXVMwoxv08=+:|-_*^!.[]{}<>bdpq()", "()pqbd<>{}[].!^*_-|:+=80vxowMVXAHOIUYTW"))
+# True
+
+
+** end of main.py **
+
