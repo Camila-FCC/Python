@@ -1,0 +1,30 @@
+** start of main.py **
+
+from datetime import datetime, timezone
+
+def mongo_id_to_date(s):
+
+    s = s[:8]
+
+    s = int(s, 16)
+    # in seconds
+
+    return datetime.fromtimestamp(s, tz=timezone.utc).isoformat()[:-6] + ".000Z"
+
+print(mongo_id_to_date("6a094b50bcf86cd799439011"))
+# "2026-05-17T05:00:00.000Z"
+
+print(mongo_id_to_date("695344eb1f4a4c1123042128"))
+# "2025-12-30T03:20:11.000Z"
+
+print(mongo_id_to_date("386da62df34123ac54617e56"))
+# "2000-01-01T07:01:01.000Z"
+
+print(mongo_id_to_date("69f571c3d7711807afd3dd55"))
+# "2026-05-02T03:38:43.000Z"
+
+print(mongo_id_to_date("68adce01c0e1144d0a90295a"))
+# "2025-08-26T15:08:49.000Z"
+
+** end of main.py **
+
