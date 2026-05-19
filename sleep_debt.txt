@@ -1,0 +1,33 @@
+** start of main.py **
+
+#from functools import reduce
+
+def sleep_debt(hours_slept, target_hours):
+
+    hours_slept_total = reduce(lambda x,y : x+y, hours_slept)
+
+    target_hours_total = target_hours * 7
+
+    diff = target_hours_total - hours_slept_total
+
+
+    return 0 if diff <= 0 else diff
+
+
+print(sleep_debt([6, 6, 6, 6, 6, 6], 8))
+# should return 20
+
+print(sleep_debt([6, 7, 8, 4, 8, 6], 7))
+# should return 10
+
+print(sleep_debt([10, 10, 9, 10, 9, 11], 9))
+# should return 4
+
+print(sleep_debt([8, 7, 6, 7, 6, 8], 6))
+# should return 0
+
+print(sleep_debt([8, 9, 10, 9, 10, 7], 7))
+# should return 0
+
+** end of main.py **
+
