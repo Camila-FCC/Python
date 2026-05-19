@@ -1,6 +1,6 @@
 ** start of main.py **
 
-#from functools import reduce
+from functools import reduce
 
 def sleep_debt(hours_slept, target_hours):
 
