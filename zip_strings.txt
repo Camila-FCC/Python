@@ -1,0 +1,52 @@
+** start of main.py **
+
+def zip_strings(a, b):
+
+    zip_str = []
+
+    i = 0
+    k = 0
+
+    if len(a) >= len(b):
+
+        while i < len(a):
+
+            zip_str.append(a[i])
+            
+            if i < len(b):
+                zip_str.append(b[i])
+
+            i+=1
+    
+    if len(b) > len(a):
+
+        while k < len(b):
+
+            if k < len(a):
+                zip_str.append(a[k])
+
+            zip_str.append(b[k])
+        
+            k+=1
+
+
+    return "".join(zip_str)
+    
+    
+print(zip_strings("abc", "123")) 
+# "a1b2c3"
+
+print(zip_strings("acegikmoqsuwy", "bdfhjlnprtvxz"))
+# "abcdefghijklmnopqrstuvwxyz"
+
+print(zip_strings("day", "night"))
+# "dnaiyght"
+
+print(zip_strings("python", "javascript"))
+# "pjyatvhaosncript"
+
+print(zip_strings("feCdCm", "reoeap"))
+# "freeCodeCamp"
+
+** end of main.py **
+
