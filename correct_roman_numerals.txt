@@ -1,0 +1,143 @@
+** start of main.py **
+
+from functools import reduce
+
+def fix_numerals(s):
+
+    s = list(s)
+    
+    s = list(map(lambda x : 1 if x == "I" else 5 if x == "V" else 10 if x == "X" else 50 if x == "L" else 100 if x == "C" else 500 if x == "D" else 1000 if x == "M" else x, s))
+    
+    s = reduce(lambda x,y : x + y, s)
+
+    print(s)
+
+    result = []
+
+    while s >= 1000:
+    
+        result.append("M")
+
+        s-=1000
+
+
+    while s >= 900:
+
+        result.append("CM")
+
+        s-=900
+
+   
+    while s >= 500:
+    
+        result.append("D")
+
+        s-=500
+
+
+    while s >= 400:
+
+        result.append("CD")
+
+        s-=400
+
+
+    while s >= 100:
+    
+        result.append("C")
+
+        s-=100
+
+
+    while s >= 90:
+
+        result.append("XC")
+
+        s-=90
+
+    
+    while s >= 50:
+    
+        result.append("L")
+
+        s -= 50
+    
+
+    while s >= 40:
+
+        result.append("XL")
+
+        s-=40
+
+   
+    while s >= 10:
+    
+        result.append("X")
+
+        s-=10
+    
+
+    while s >= 9:
+
+        result.append("IX")
+
+        s-=9
+
+
+    while s >= 5:
+    
+        result.append("V")
+
+        s-=5
+    
+
+    while s >= 4:
+
+        result.append("IV")
+
+        s-=4
+   
+    while s >= 1:
+    
+        result.append("I")
+    
+        s-=1
+  
+    #print(s)
+
+    return "".join(result)
+  
+
+
+
+# 4 + 20 + 40 + 200 + 200 + 1000 = 64 + 1400 = 1464
+print(fix_numerals("IIIIVVVVXXXXLLLLCCDD"))
+
+# "MCDLXIV"
+
+
+print(fix_numerals("MDCCLXXXXVIIII"))
+
+# "MDCCXCIX"
+
+
+print(fix_numerals("ILCDMIVDIIXLCVCXDL"))
+
+# "MMCMLXXXIV"
+
+
+print(fix_numerals("MDCCLXXXXVIIII"))
+
+# "MDCCXCIX"
+
+
+# "I" 1
+# "V" 5
+# "X" 10
+# "L" 50
+# "C" 100
+# "D" 500
+# "M" 1000
+
+** end of main.py **
+
