@@ -1,0 +1,45 @@
+** start of main.py **
+
+import math
+from functools import reduce
+
+def get_pizzas_to_order(hours_worked):
+
+    #how many slices
+    pizza = 8
+
+    counting_slices = list(map(lambda x : math.ceil(x/3), hours_worked))
+
+    slices = [2 if x <= 1 else x for x in counting_slices]
+
+    pizzas = math.ceil(reduce(lambda x,y : x+y, slices)/pizza)
+
+    return pizzas
+
+print(get_pizzas_to_order([8, 8, 8])) # 2
+
+print(get_pizzas_to_order([10, 9, 8, 2, 2, 6, 10])) # 3
+
+print(get_pizzas_to_order([1, 2, 3, 4, 5])) # 2
+
+print(get_pizzas_to_order([8, 8, 8, 8, 8, 8, 8, 8])) # 3
+
+print(get_pizzas_to_order([9, 9, 6])) # 1
+
+print(get_pizzas_to_order([10, 12, 16, 9, 8, 11, 15, 8, 0])) # 5
+
+
+# Pizza Party
+
+# Given an array of hours worked today per person, return the number of pizzas to order for a pizza party.
+
+# Divide each person's hours worked by 3 to get their slice count.
+
+# You can't eat a partial slice, so round each person's slice count up to the nearest whole number.
+
+# Each person gets a minimum of two slices.
+
+# Each pizza has 8 slices. Round the total number of pizzas up to the nearest whole pizza.
+
+** end of main.py **
+
