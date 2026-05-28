@@ -1,0 +1,57 @@
+** start of main.py **
+
+def fizz_buzz_count(start, end):
+
+    i = start
+
+    the_range = []
+
+    while(i < end+1):
+
+        the_range.append(i)
+
+        i+=1
+  
+
+    fizz = len(list(filter(lambda x : x % 3 == 0, the_range)))
+
+    buzz = len(list(filter(lambda x : x % 5 == 0, the_range)))
+
+    #fizz_buzz = len(list(filter(lambda x : x % 3 == 0 and x % 5 == 0, the_range)))  
+
+    return {"fizz": fizz, "buzz": buzz}
+
+
+# First example_
+# Range: from 1 to 11
+
+# 1 2 3 4 5 6 7 8 9 10 11
+
+# divisible by 3: fizz
+
+# divisible by 5: buzz
+
+# divisible by 3 and by 5: fizz buzz
+
+# 3, 6, 9 => 3x fizz
+# 5, 10 => 2x buzz
+# divisible by both: ----
+
+
+print(fizz_buzz_count(1, 11))
+# {fizz: 3, buzz: 2}
+
+print(fizz_buzz_count(14, 41))
+# {fizz: 9, buzz: 6}
+
+print(fizz_buzz_count(24, 100))
+# {fizz: 26, buzz: 16}
+
+print(fizz_buzz_count(-635, -14))
+# {fizz: 207, buzz: 125}
+
+print(fizz_buzz_count(-5432, 6789))
+# {fizz: 4074, buzz: 2444}
+
+** end of main.py **
+
