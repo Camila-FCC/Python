@@ -1,0 +1,146 @@
+** start of main.py **
+
+def get_best_hand(cards):
+
+    ranks = list(map(lambda x : x[0], cards))
+    #print(ranks)
+
+    suits = list(map(lambda x : x[1], cards))
+    #print(suits)
+
+    # ascendent order 1,2,3
+    one_two_three = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"]
+
+    one_two_three_copy = one_two_three.copy()
+    #print(one_two_three_copy)
+
+    #descendent order 3,2,1
+    three_two_one = one_two_three_copy[::-1]
+    #print(three_two_one)
+
+    if ("".join(ranks) in "".join(one_two_three)) or ("".join(ranks) in "".join(three_two_one)):
+
+        if len(list(set(suits))) == 1:
+
+            return "Straight Flush"
+    
+        else:
+            return "Straight"
+  
+
+    royal_flush_ranks = "AKQJT"
+
+    if(royal_flush_ranks in "".join(ranks)):
+
+        if len(list(set(suits))) == 1:
+
+            return "Royal Flush"
+
+  
+    # Four of a Kind
+    if("".join(ranks)[0:4] == (ranks[0]) * 4):
+        
+        return "Four of a Kind"
+
+
+    # Full House
+    if(("".join(ranks)[0:3] == (ranks[0]) * 3) and ("".join(ranks)[3:5] == (ranks[3]) * 2) and (ranks[3] != ranks[0])):
+    
+        return "Full House"
+
+
+    # Three of a Kind
+    if("".join(ranks)[0:3] == (ranks[0]) * 3):
+
+        return "Three of a Kind"
+
+    # Flush
+    if(("".join(suits) == (suits[0]) * 5) and ("".join(ranks) != royal_flush_ranks) and ("".join(ranks) != (ranks[0]) * 5)):
+
+        return "Flush"
+
+
+    # Two Pair
+    if(("".join(ranks)[0:2] == (ranks[0]) * 2) and ("".join(ranks)[2:4] == (ranks[2]) * 2) and (ranks[len(ranks)-1] != ranks[2])):
+
+        return "Two Pair"
+
+
+    # Pair
+    if(("".join(ranks)[0:2] == (ranks[0]) * 2) and ("".join(ranks)[2:4] != (ranks[2]) * 2)):
+
+        return "Pair"
+
+
+    return "High Card"
+
+
+print(get_best_hand(["7s", "7h", "7d", "2c", "5h"]))
+# "Three of a Kind"
+
+print(get_best_hand(["Ks", "Kh", "Kd", "4s", "4h"]))
+# "Full House"
+
+print(get_best_hand(["2h", "5h", "7h", "9h", "Jh"]))
+# "Flush"
+
+print(get_best_hand(["As", "Ah", "Ad", "Ac", "Kh"]))
+# "Four of a Kind"
+
+print(get_best_hand(["Ts", "Th", "9d", "9c", "8h"]))
+# "Two Pair"
+
+print(get_best_hand(["9c", "8c", "7c", "6c", "5c"]))
+# "Straight Flush"
+
+print(get_best_hand(["As", "Kh", "Jd", "8c", "5h"]))
+# "High Card"
+
+print(get_best_hand(["As", "2h", "3d", "4c", "5h"]))
+# "Straight"
+
+print(get_best_hand(["Ts", "Th", "7c", "6d", "5h"]))
+# "Pair"
+
+print(get_best_hand(["As", "Ks", "Qs", "Js", "Ts"]))
+# "Royal Flush"
+
+
+# Best Hand
+
+# Given an array of five strings representing playing card# the name of the best hand.
+
+# Each card is represented as a two-character string: the rank followed by the suit, "2h" for example.
+
+# Ranks, from low to high, are: "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", and "A".
+
+# Suits are: "h", "d", "c", and "s".
+
+# Aces ("A") can be used as high or low in a straight.
+
+# The hands, in order from worst to best, are:
+
+# "High Card" = No pair or better;
+
+# "Pair" = Two of one rank;
+
+# "Two Pair" = Two of one rank and two of another;
+
+# "Three of a Kind"	= Three of one rank;
+
+# "Straight" = Five ranks in a row;
+
+# "Flush" = Five of the same suit;
+
+# "Full House" = Three of one rank, and two of another;
+
+# "Four of a Kind" = Four of one rank;
+
+# "Straight Flush" = Five ranks in a row of the same suit;
+
+# "Royal Flush"	= "A", "K", "Q", "J", "T" of the same suit.
+
+
+
+** end of main.py **
+
