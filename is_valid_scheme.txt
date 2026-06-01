@@ -1,0 +1,34 @@
+** start of main.py **
+
+def is_valid_schema(obj):
+
+    val = list(obj.values())
+    #print(val)
+    
+    obj = list(map(lambda x : isinstance(x, str), val))
+    #print(obj)
+    
+    for result in obj:
+        if result == True:
+            return True
+        else:
+            return False
+
+
+print(is_valid_schema({"username": "bob"})) 
+#shoTrue
+
+print(is_valid_schema({"username": "jen", "posts": 30})) 
+# True
+
+print(is_valid_schema({"username": ""}))
+# True
+
+print(is_valid_schema({"username": 7})) 
+# False
+
+print(is_valid_schema({"posts": 25}))
+# False
+
+** end of main.py **
+
