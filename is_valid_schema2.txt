@@ -1,0 +1,43 @@
+** start of main.py **
+
+def is_valid_schema(obj):
+
+    if len(obj.keys()) < 3:
+        return False
+
+    check_username = isinstance(obj["username"], str)
+
+    check_posts = isinstance(obj["posts"], int)
+
+    check_verified = isinstance(obj["verified"], bool)
+
+    check_keys = list(obj.keys())
+
+    if (check_username and check_posts and check_verified and check_keys[0] == "username" and check_keys[1] == "posts" and check_keys[2] == "verified" and len(check_keys) >= 3):
+        return True
+    
+    else:
+        return False
+
+print(is_valid_schema({"username": "bill", "verified": True}))
+# False
+
+print(is_valid_schema({"username": "alice", "posts": 10, "verified": False})) 
+# True
+
+print(is_valid_schema({"username": "fred", "verified": True}))
+# False
+
+print(is_valid_schema({"username": 5, "posts": 10, "verified": True}))
+# False
+
+print(is_valid_schema({"username": "carol", "posts": 15, "verified": True, "followers": 25}))
+# True
+
+print(is_valid_schema({"username": "frank", "posts": "21", "verified": True}))
+# False
+
+
+
+** end of main.py **
+
