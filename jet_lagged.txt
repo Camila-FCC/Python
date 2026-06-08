@@ -1,0 +1,67 @@
+** start of main.py **
+
+import math
+
+def get_jet_lag_hours(departure_city, arrival_city, flight_duration, direction):
+
+    dc_name = departure_city
+  
+    dc_offset_utc = -8 if dc_name == "Los Angeles" else -5 if dc_name == "New York" else 0 if dc_name == "London" else 3 if dc_name == "Istanbul" else 4 if dc_name == "Dubai" else 8 if dc_name == "Hong Kong" else 9 if dc_name == "Tokyo" else None
+
+    ac_name = arrival_city
+
+    ac_offset_utc = -8 if ac_name == "Los Angeles" else -5 if ac_name == "New York" else 0 if ac_name == "London" else 3 if ac_name == "Istanbul" else 4 if ac_name == "Dubai" else 8 if ac_name == "Hong Kong" else 9 if ac_name == "Tokyo" else None
+
+    direction = 1.5 if direction == "east" else 1.0
+
+    timezone_diff = abs((ac_offset_utc) - (dc_offset_utc))
+
+  
+    # Get the jet lag hours with the formula:
+
+    # timezone difference 
+  
+    # + 
+  
+    # (flight duration * 0.1) 
+  
+    # *
+  
+    # direction multiplier
+
+    # =
+
+    # calculate
+
+
+    # Return the jet lag hours rounded to one decimal place.
+  
+    calculate = format((timezone_diff + (flight_duration * 0.1) * direction), ".1f")
+
+    return float(calculate)
+
+
+
+print(get_jet_lag_hours("Istanbul", "Hong Kong", 10, "east"))
+# 6.5
+
+print(get_jet_lag_hours("London", "New York", 8, "west"))
+# 5.8
+
+print(get_jet_lag_hours("Hong Kong", "Tokyo", 4, "east"))
+# 1.6
+
+print(get_jet_lag_hours("Dubai", "London", 7, "west"))
+# 4.7
+
+print(get_jet_lag_hours("Los Angeles", "Hong Kong", 15, "west"))
+# 17.5
+
+print(get_jet_lag_hours("Tokyo", "Dubai", 9, "west"))
+# 5.9
+
+print(get_jet_lag_hours("New York", "Istanbul", 10, "east"))
+# 9.5
+
+** end of main.py **
+
