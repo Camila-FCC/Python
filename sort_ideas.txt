@@ -1,0 +1,62 @@
+** start of main.py **
+
+import math
+def analyze_ideas(ideas):
+
+    # [ idea name and getting its length, optimistic value, realistic value, pessimistic value ] 
+  
+    idea_name = list(map(lambda x : x[0], ideas))
+
+    length_of_idea_name = list(map(lambda x : int(len(x[0])), ideas))
+
+    optimistic = list(map(lambda x : int(x[1]), ideas))
+
+    realistic = list(map(lambda x : int(x[2]), ideas))
+
+    pessimistic = list(map(lambda x : int(x[3]), ideas))
+
+    expected_arr = []
+
+    expected_arr_names = []
+
+    k = 0
+
+    while k < len(optimistic):
+
+        expected_loop = ((optimistic[k] + 4 * realistic[k] + pessimistic[k]) / 6) * length_of_idea_name[k]
+
+        expected_arr.append(round(expected_loop))
+
+        expected_arr_names.append(f'{idea_name[k]} = {expected_arr[k]}')
+
+        k+=1
+  
+
+    result_values = list(map(lambda x : int(x.split(" = ")[1]), expected_arr_names))
+
+    result_values.sort()
+
+    result_names = []
+
+    i = 0
+
+    while i < len(result_values):
+
+        result_name = "".join([x.split(" = ")[0] for x in expected_arr_names if int(x.split(" = ")[1]) == result_values[i]])
+
+        result_names.append(result_name)
+
+        i+=1
+
+
+    return result_names
+
+
+print(analyze_ideas([["Add logging", 2, 5, 15], ["SEO optimization", 4, 8, 20], ["Fix bug", 1, 3, 5]]))
+
+# ["Fix bug", "Add logging", "SEO optimization"]
+
+
+
+** end of main.py **
+
