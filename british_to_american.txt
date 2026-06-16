@@ -1,0 +1,41 @@
+** start of main.py **
+
+def british_to_american(sentence):
+
+    sentence = sentence.replace("colour", "color").replace("Colour", "Color").replace("flavour", "flavor").replace("Flavour", "Flavor").replace("honour", "honor").replace("Honour", "Honor").replace("neighbour", "neighbor").replace("Neighbour", "Neighbor").replace("labour", "labor").replace("Labour", "Labor").replace("humour", "humor").replace("Humour", "Humor").replace("centre", "center").replace("Centre", "Center").replace("fibre", "fiber").replace("Fibre", "Fiber").replace("defence", "defense").replace("Defence", "Defense").replace("offence", "offense").replace("Offence", "Offense").replace("organise", "organize").replace("Organise", "Organize").replace("Recognise", "Recognize").replace("recognise", "recognize").replace("analyse", "analyze").replace("Analyse", "Analyze")
+
+    return sentence
+
+
+print(british_to_american("I love the colour blue."))
+
+# "I love the color blue."
+
+print(british_to_american("The fibre optic cable is new."))
+
+# "The fiber optic cable is new."
+
+print(british_to_american("It's an honour to meet someone with such humour."))
+
+# "It's an honor to meet someone with such humor."
+
+print(british_to_american("The unrecognised artist analysed his colour palette at the centre."))
+
+# "The unrecognized artist analyzed his color palette at the center."
+
+print(british_to_american("The offence analysed, with organisation, the defence centre and recognised that the neighbouring labouror was humourous, flavourful, and colourful."))
+
+# The offense analyzed, with organisation, the defense center and recognized that the neighboring laboror was humorous, flavorful, and colorful
+
+
+##############
+
+# Replacements should be case-insensitive. For example, "Colour" should become "Color".
+
+
+# The input may contain words that build on the exact spelling of a root in the table that also need to be changed. For example, "colouring" should become "coloring", and "disorganised" should become "disorganized".
+
+
+
+** end of main.py **
+
