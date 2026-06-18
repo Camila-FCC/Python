@@ -1,0 +1,60 @@
+** start of main.py **
+
+from functools import reduce
+
+def get_streaming_bill(cart, subscription):
+
+    form = list(map(lambda obj : obj["format"], cart))
+
+    #print(form)
+
+    ty = list(map(lambda obj : obj["type"], cart))
+
+    #print(ty)
+
+    full_price = []
+
+    # each format and each type have the same length
+
+    # their indexes have the same info position
+
+    i = 0
+
+    while i < len(form):
+
+        result = 3.99 if(form[i] == "HD" and ty[i] == "rent") else 12.99 if(form[i] == "HD" and ty[i] == "buy") else 5.99 if(form[i] == "4K" and ty[i] == "rent") else 19.99 if(form[i] == "4K" and ty[i] == "buy") else None
+
+        float(result)
+
+        tier_discounts = result if subscription == "none" else result - (result * 0.1) if subscription == "basic" else result - (result * 0.25) if subscription == "premium" else None
+
+        full_price.append(tier_discounts)
+
+        i+=1
+
+    final_result = reduce(lambda x, y : x + y, full_price)
+
+    #print(final_result)
+
+    return f"${final_result:.2f}"
+
+print(get_streaming_bill([{ "format": "HD", "type": "rent" }], "none"))
+# "$3.99"
+
+print(get_streaming_bill([{ "format": "HD", "type": "rent" }, { "format": "HD", "type": "buy" }], "premium"))
+# "$12.73"
+
+print(get_streaming_bill([{ "format": "HD", "type": "rent" }, { "format": "HD", "type": "rent" }, { "format": "HD", "type": "buy" }], "basic"))
+# "$18.87"
+
+print(get_streaming_bill([{ "format": "4K", "type": "buy" }, { "format": "4K", "type": "buy" }], "premium"))
+# "$29.98"
+
+print(get_streaming_bill([{ "format": "HD", "type": "rent" }, { "format": "4K", "type": "rent" }, { "format": "HD", "type": "buy" }, { "format": "4K", "type": "buy" }], "none"))
+# "$42.96"
+
+print(get_streaming_bill([{ "format": "HD", "type": "rent" }, { "format": "4K", "type": "rent" }, { "format": "HD", "type": "buy" }, { "format": "4K", "type": "buy" }, { "format": "HD", "type": "buy" }], "basic"))
+# "$50.36"
+
+** end of main.py **
+
