@@ -1,0 +1,11 @@
+** start of main.py **
+
+def make_leet(s):
+
+    return s.replace("a", "4").replace("e", "3").replace("g", "9").replace("i", "1").replace("l", "1").replace("o", "0").replace("s", "5").replace("t", "7")
+
+print(make_leet("abcdefghijklmnopqrstuvwxyz"))
+# "4bcd3f9h1jk1mn0pqr57uvwxyz"
+
+** end of main.py **
+
