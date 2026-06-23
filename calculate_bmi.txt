@@ -1,0 +1,18 @@
+** start of main.py **
+
+def calculate_bmi(weight, height):
+
+    calculate = "%.1f" % ((weight / (height**2)) * 703)
+
+
+    return float(calculate)
+    
+
+print(calculate_bmi(140, 64))
+# 24.0
+
+print(calculate_bmi(160, 76))
+# 19.5
+
+** end of main.py **
+
