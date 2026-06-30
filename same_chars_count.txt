@@ -1,0 +1,24 @@
+** start of main.py **
+
+def duplicate_character_count(str1, str2):
+
+    i = 0
+    same_chars = 0
+
+    while i < len(str2):
+
+        if str2[i] in str1:
+            same_chars += 1
+
+        i+=1
+
+    return same_chars
+
+print(duplicate_character_count("ciao", "konnichiwa"))
+# 5
+
+print(duplicate_character_count("hello world", "hello to everyone around the world"))
+# 26
+
+** end of main.py **
+
