@@ -1,0 +1,49 @@
+** start of main.py **
+
+def get_mood(genre, bpm):
+
+    if genre == "rock":
+
+        return "happy" if (bpm > 59 and bpm < 130) else "hype" if (bpm > 129 and bpm < 181) else None
+    
+    if genre == "electronic":
+
+        return "focus" if (bpm > 59 and bpm < 90) else "happy" if (bpm > 89 and bpm < 135) else "hype" if (bpm > 134 and bpm < 181) else None
+    
+    if genre == "classical":
+
+        return "happy" if (bpm > 109 and bpm < 181) else "focus" if (bpm > 59 and bpm < 110) else None
+    
+    if genre == "pop":
+
+        return "happy" if (bpm > 59 and bpm < 181) else None
+    
+
+    return genre
+
+print(get_mood("rock", 111))
+# "happy"
+
+print(get_mood("electronic", 74))
+# "focus"
+
+print(get_mood("classical", 180))
+# "happy"
+
+print(get_mood("rock", 155))
+# "hype"
+
+print(get_mood("electronic", 90))
+# "happy"
+
+print(get_mood("classical", 67))
+# "focus"
+
+print(get_mood("pop", 100))
+# "happy"
+
+print(get_mood("electronic", 135))
+# "hype"
+
+** end of main.py **
+
