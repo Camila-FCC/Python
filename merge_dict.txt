@@ -1,0 +1,13 @@
+** start of main.py **
+
+def migrate_record(schema, record):
+
+    return schema | record
+
+
+print(migrate_record({ "username": "", "email": "", "posts": 0, "verified": False, "role": "user", "banned": False }, { "username": "camper", "email": "camper@freecodecamp.org", "role": "admin" }))
+
+# { "username": "camper", "email": "camper@freecodecamp.org", "role": "admin", "posts": 0, "verified": False, "banned": False }
+
+** end of main.py **
+
