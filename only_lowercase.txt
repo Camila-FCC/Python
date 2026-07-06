@@ -1,0 +1,29 @@
+** start of main.py **
+
+def get_lowercase_words(s):
+
+    s = s.split(" ")
+
+    result = list(filter(lambda x : x == x.lower().strip(), s))
+
+    return " ".join(result)
+
+
+print(
+get_lowercase_words("hello GOOD world"))
+# "hello world"
+
+print(get_lowercase_words("these are all lowercase"))
+# "these are all lowercase"
+
+print(get_lowercase_words("less is NoT more"))
+# "less is more"
+
+print(get_lowercase_words("DonT eat pizza every OTHER day"))
+# "eat pizza every day"
+
+print(get_lowercase_words("the Super quick AND snEaky brown fox Leapt anD jumped over aNd AROUND the lazy SloW dog"))
+# "the quick brown fox jumped over the lazy dog"
+
+** end of main.py **
+
