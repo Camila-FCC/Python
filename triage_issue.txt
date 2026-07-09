@@ -1,0 +1,31 @@
+** start of main.py **
+
+def triage_issue(ms, message):
+
+    message = message.lower()
+
+    days = ms / (24*60*60*1000)
+
+    return "leave it" if days < 7 else "close it" if (days >= 7 and "bump" in message) else "bump it"
+
+
+print(triage_issue(86400000, "Lets fix it")) 
+# "leave it"
+
+print(triage_issue(1209600000, "still waiting"))
+# "bump it"
+
+print(triage_issue(864000000, "bump")) 
+# "close it"
+
+print(triage_issue(604800000, "Do we still want this?"))
+# "bump it"
+
+print(triage_issue(604800000, "Bumping this"))
+# "close it"
+
+print(triage_issue(345600000, "I'll make a PR"))
+# "leave it"
+
+** end of main.py **
+
