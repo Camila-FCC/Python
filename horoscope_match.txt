@@ -1,0 +1,50 @@
+** start of main.py **
+
+def horoscope_match(sign1, sign2):
+
+    zodiac = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces", "Aries"]
+
+    sign1num = zodiac.index(sign1)
+
+    sign2num = zodiac.index(sign2)
+
+
+    if sign1 == "Pisces" and sign2 == "Aries":
+        
+        sign2num = len(zodiac) - 1
+            
+    if sign1 == "Aries" and sign2 == "Pisces":
+        
+        sign1num = len(zodiac) - 1
+
+    
+    distance = abs(sign1num - sign2num)
+
+    result = ["100%", "40%", "80%", "30%", "90%", "20%", "50%"]
+
+    return result[distance]
+                    
+
+print(horoscope_match("Libra", "Sagittarius"))
+# "80%"
+
+print(horoscope_match("Gemini", "Scorpio"))
+# "20%"
+
+print(horoscope_match("Pisces", "Aries"))
+# "40%"
+
+print(horoscope_match("Capricorn", "Cancer"))
+# "50%"
+
+print(horoscope_match("Aquarius", "Aquarius"))
+# "100%"
+
+print(horoscope_match("Virgo", "Taurus"))
+# "90%"
+
+print(horoscope_match("Leo", "Scorpio"))
+# "30%"
+
+** end of main.py **
+
