@@ -1,0 +1,13 @@
+** start of main.py **
+
+def get_tally_count(s):
+
+    s = int(len("".join(s.split(" "))))
+
+    return s
+
+print(get_tally_count("||||/ ||||/ ||||/ ||||/ ||||/ ||||/ ||||/ ||||/ |"))
+# 41
+
+** end of main.py **
+
