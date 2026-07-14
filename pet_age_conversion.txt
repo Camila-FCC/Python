@@ -1,0 +1,17 @@
+** start of main.py **
+
+def pet_years(pet, age):
+
+    dog = age * 7
+    cat = age * 6
+    bird = age * 5
+    goldfish = age * 6
+    guinea = age * 12
+    hamster = age * 30
+    rabbit = age * 8
+
+    return dog if pet == "dog" else cat if pet == "cat" else guinea if pet == "guinea pig" else rabbit if pet == "rabbit" else bird if pet == "bird" else hamster if pet == "hamster" else goldfish if pet == "goldfish" else "I do not know."
+
+
+** end of main.py **
+
