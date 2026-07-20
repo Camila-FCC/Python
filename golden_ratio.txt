@@ -1,0 +1,21 @@
+** start of main.py **
+
+def is_golden_ratio(a, b):
+
+    ratio1 = a/b
+    ratio2 = b/a
+
+    calculate1 = abs(1.618 - ratio1)
+
+    calculate2 = abs(1.618 - ratio2)
+
+    tolerance = 0.01
+
+    return calculate1 <= tolerance or calculate2 <= tolerance
+
+
+print(is_golden_ratio(1618, 1000))
+# True
+
+** end of main.py **
+
