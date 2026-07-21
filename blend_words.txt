@@ -1,0 +1,31 @@
+** start of main.py **
+
+def blend_words(word1, word2):
+
+    word1 = word1[0:int(len(word1)/2)]
+
+    word2 = word2[int(len(word2)/2):]
+
+    return word1 + word2
+
+
+print(blend_words("turtle", "toucan"))
+# "turcan"
+
+print(blend_words("chipmunk", "flamingo"))
+# "chipingo"
+
+print(blend_words("falcon", "pelican"))
+# "falican"
+
+print(blend_words("hyena", "iguana"))
+# "hyana"
+
+print(blend_words("scorpion", "gorilla"))
+# "scorilla"
+
+print(blend_words("platypus", "wolverine"))
+# "platerine"
+
+** end of main.py **
+
