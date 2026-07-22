@@ -1,0 +1,45 @@
+** start of main.py **
+
+from functools import reduce
+
+def piggy_bank(coins):
+
+    if coins == {}:
+        return "$0.00"
+
+    for c in coins:
+        if c == "pennies":
+            coins[c] *= 0.01
+        if c == "nickels":
+            coins[c] *= 0.05
+        if c == "dimes":
+            coins[c] *= 0.10
+        if c == "quarters":
+            coins[c] *= 0.25
+
+        coins[c] = float(coins[c])
+
+    calculate = reduce(lambda x,y : x+y, coins.values())        
+    
+    result = f"{calculate:.2f}"
+
+    return "$" + result
+
+
+print(piggy_bank({"pennies": 3, "nickels": 5, "dimes": 2, "quarters": 6}))
+# "$1.98"
+
+print(piggy_bank({"pennies": 1, "nickels": 1, "dimes": 1, "quarters": 1}))
+# "$0.41"
+
+print(piggy_bank({"nickels": 8, "dimes": 6, "quarters": 5}))
+# "$2.25"
+
+print(piggy_bank({}))
+# "$0.00"
+
+print(piggy_bank({"pennies": 146, "nickels": 11, "dimes": 0, "quarters": 19}))
+# "$6.76"
+
+** end of main.py **
+
