@@ -1,0 +1,32 @@
+def play_game(p1, p2):
+
+    i = 0
+    points1 = 0
+    points2 = 0
+
+    while i < len(p1):
+
+        if p1[i] == p2[i] and p1[i] == "C":
+
+            points1 += 3
+            points2 += 3
+        
+        if p1[i] == p2[i] and p1[i] == "D":
+
+            points1 += 1
+            points2 += 1
+        
+        if p1[i] != p2[i] and p1[i] == "D":
+
+            points1 += 5
+        
+        if p1[i] != p2[i] and p2[i] == "D":
+
+            points2 += 5
+
+        i += 1
+
+    return [points1, points2]
+
+print(play_game("DDCCDDDDCDDCDDDCDD", "CCDCCCDCCCDCCCCDCC"))
+# [66, 21]
