@@ -1,0 +1,15 @@
+def is_pronic(n):
+
+    i = 0
+
+    while i < (n+1):
+
+        if (i * (i+1)) == n:
+            return True 
+
+        i+=1
+
+    return False
+
+print(is_pronic(6))
+# True
