@@ -1,0 +1,30 @@
+def get_contrast_rating(l1, l2, is_large_text):
+
+    l1 += 0.05
+    l2 += 0.05
+    calculate = 0
+
+    if l1 < l2:
+        calculate = l2/l1
+    else:
+        calculate = l1/l2
+
+    if is_large_text == True:
+        if calculate >= 4.5:
+            return "AAA"
+        if calculate < 4.5 and calculate >= 3:
+            return "AA"
+    
+    # normal text
+    if is_large_text == False:
+        if calculate >= 7:
+            return "AAA"
+        if calculate >= 4.5:
+            return "AA"
+            
+
+    return "Fail"
+
+
+print(get_contrast_rating(0.9015, 0.1364, False))
+# "AA"
