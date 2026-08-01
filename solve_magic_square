@@ -1,0 +1,32 @@
+from functools import reduce
+
+def solve_magic_square(grid):
+
+    first_row = reduce(lambda x,y : x+y, grid[0])
+
+    second_row = reduce(lambda x,y : x+y, grid[1])
+
+    third_row = reduce(lambda x,y : x+y, grid[2])
+
+    first_col = reduce(lambda x,y : x+y, [grid[0][0], grid[1][0], grid[2][0]])
+
+    second_col = reduce(lambda x,y : x+y, [grid[0][1], grid[1][1], grid[2][1]])
+
+    third_col = reduce(lambda x,y : x+y, [grid[0][2], grid[1][2], grid[2][2]])
+
+    diagonal = reduce(lambda x,y : x+y, [grid[0][2], grid[1][1], grid[2][0]])
+
+    values = [first_row, second_row, third_row, first_col, second_col, third_col, diagonal]
+
+    filter_values = set(values)
+    #print(filter_values)
+
+    if len(filter_values) > 2:
+        return "impossible"
+    
+    calc = abs(reduce(lambda x,y : x-y, filter_values))
+    
+    return calc
+                                
+print(solve_magic_square([[0, 14, 12], [18, 10, 2], [8, 6, 16]]))
+# 4
