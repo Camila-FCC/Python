@@ -1,0 +1,68 @@
+def is_balanced(s):
+
+    s = s.lower()
+
+    i = 0
+
+    s = s.replace(" ", "")
+
+    #center_char = ""
+    # only if it's odd size
+
+    index_center_char = 0
+    # only if it's odd size
+
+    size = len(s)
+
+    if size % 2 != 0:
+
+        index_center_char = int((size-1)/2)
+
+        #center_char = s[index_center_char]
+
+    first_half = ""
+    second_half = ""
+    
+    #it's an even size value
+    if size % 2 == 0:
+
+        first_half = s[0:int(size/2)]
+
+        second_half = s[int(size/2):]
+    
+    if size % 2 != 0:
+
+        first_half = s[0:index_center_char]
+
+        second_half = s[(index_center_char+1):]
+    
+    first_half = list(first_half)
+    
+    second_half = list(second_half)
+
+    vowels_fh = len(list(filter(lambda x : x in ["a", "e", "i", "o", "u"], first_half)))
+
+    vowels_sh = len(list(filter(lambda x : x in ["a", "e", "i", "o", "u"], second_half)))
+
+    return vowels_fh == vowels_sh
+
+print(is_balanced("racecar"))
+# True
+
+print(is_balanced("Lorem Ipsum"))
+# True
+
+print(is_balanced("Kitty Ipsum"))
+# False
+
+print(is_balanced("string"))
+# False
+
+print(is_balanced(" "))
+# True
+
+print(is_balanced("abcdefghijklmnopqrstuvwxyz"))
+# False
+
+print(is_balanced("123A#b!E&*456-o.U"))
+# True
