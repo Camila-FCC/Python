@@ -1,0 +1,32 @@
+def are_anagrams(str1, str2):
+
+    str1 = str1.lower()
+    str2 = str2.lower()
+
+    check_str1 = "".join(sorted(list(str1)))
+
+    check_str2 = "".join(sorted(list(str2)))
+
+    check_str1 = check_str1.replace(" ", "")
+
+    check_str2 = check_str2.replace(" ", "")
+
+    return check_str1 == check_str2
+
+print(are_anagrams("listen", "silent"))
+# True
+
+print(are_anagrams("School master", "The classroom"))
+# True
+
+print(are_anagrams("A gentleman", "Elegant man"))
+# True
+
+print(are_anagrams("Hello", "World"))
+# False
+
+print(are_anagrams("apple", "banana"))
+# False
+
+print(are_anagrams("cat", "dog"))
+# False
