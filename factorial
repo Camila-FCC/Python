@@ -1,0 +1,21 @@
+from functools import reduce
+def factorial(n):
+
+    if n == 0:
+        return 1
+
+    i = 1
+    numbers = []
+
+    while i <= n:
+
+        numbers.append(i)
+
+        i+=1
+
+    result = reduce(lambda x,y : x*y, numbers)
+
+    return result
+
+print(factorial(20))
+# 2432902008176640000
