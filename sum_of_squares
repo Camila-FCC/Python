@@ -1,0 +1,25 @@
+from functools import reduce
+
+def sum_of_squares(n):
+
+    if n > 1000:
+        return "Up to 1000"
+    
+    i = 1
+
+    my_list = []
+
+    while i <= n:
+
+        my_list.append(i**2)
+    
+        i += 1
+
+    return reduce(lambda x,y : x+y, my_list)
+
+
+print(sum_of_squares(500))
+# 41791750
+
+print(sum_of_squares(5))
+# 55
