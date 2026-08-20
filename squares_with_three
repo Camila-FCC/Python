@@ -1,0 +1,24 @@
+def squares_with_three(n):
+
+    if n < 1 or n > 10000:
+        return "Between 1 and 10000, please"
+    
+    i = 1
+
+    my_list = []
+
+    while i < n:
+
+        my_list.append(i**2)
+
+        i+=1
+    
+    all_strings = list(map(lambda x : str(x), my_list))
+
+    check_digit_3 = len(list(filter(lambda x : '3' in x, all_strings)))
+
+    return check_digit_3
+
+
+print(squares_with_three(10))
+# 1
