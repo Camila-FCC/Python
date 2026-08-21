@@ -1,0 +1,56 @@
+def mile_pace(miles, duration):
+
+    duration = duration.split(":")
+
+    minutes = (duration[0])
+    
+    seconds = int(duration[1])
+
+    # 1min = 60sec
+
+    # minutes to seconds:
+    minutes = int(minutes) * 60
+
+    #1 min = 60s
+    # x  = 480s
+
+    # 60x = 480
+    # x = 480/60
+
+    # x = 8
+
+    calculate = ((minutes + seconds) / miles) / 60
+
+    calc = [str(calculate)]
+
+    calc = calc[0].split(".")
+
+    # transform decimal part doing (* 60) to get mm:ss correctly
+
+    calc[1] = str(int(calc[1]) * 60)
+
+    if len(calc[1]) > 2:
+        calc[1] = calc[1][:2]
+    
+    if calc[1] == "0" or calc[1] == 0:
+        calc[1] = "00"
+    
+    if len(calc[0]) < 2:
+
+        calc[0] = "0" + calc[0]
+
+
+    return ":".join(calc)
+
+
+print(mile_pace(3, "24:00"))
+# "08:00"
+
+print(mile_pace(1, "06:45"))
+# "06:45"
+
+print(mile_pace(2, "07:00"))
+# "03:30"
+
+print(mile_pace(26.2, "120:35"))
+# "04:36"
