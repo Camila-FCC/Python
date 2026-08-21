@@ -9,7 +9,7 @@ def mile_pace(miles, duration):
     # 1min = 60sec
 
     # minutes to seconds:
-    minutes = int(minutes) * 60
+    # minutes = int(minutes) * 60
 
     #1 min = 60s
     # x  = 480s
@@ -36,7 +36,6 @@ def mile_pace(miles, duration):
         calc[1] = "00"
     
     if len(calc[0]) < 2:
-
         calc[0] = "0" + calc[0]
 
 
