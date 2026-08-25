@@ -1,0 +1,38 @@
+import re
+
+def to_camel_case(s):
+        
+    s = re.sub(r"-", " ", s)
+    s = re.sub(r"_", " ", s)
+
+    s = s.split(" ")
+    #print(s)
+
+    s = list(filter(lambda x : x.strip(), s))
+
+    s = list(map(lambda x : x[0].upper() + x[1:].lower(), s))
+
+    s[0] = s[0].lower()
+
+    return "".join(s)
+
+
+print(to_camel_case("hello world"))
+
+# "helloWorld"
+
+print(to_camel_case("HELLO WORLD"))
+
+# "helloWorld"
+
+print(to_camel_case("secret agent-X"))
+
+# "secretAgentX"
+
+print(to_camel_case("FREE cODE cAMP"))
+
+# "freeCodeCamp"
+
+print(to_camel_case("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk"))
+
+# "yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk"
