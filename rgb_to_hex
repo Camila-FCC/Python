@@ -1,0 +1,23 @@
+def rgb_to_hex(rgb):
+
+    rgb = rgb.lower()
+
+    rgb = rgb.replace("(", "").replace(")", "").replace("rgb", "").split(",")
+
+    rgb = list(map(lambda x : hex(int(x))[2:], rgb))
+
+    rgb = list(map(lambda x : f"0{x}" if len(x) < 2 else x, rgb))
+
+    return "#" + "".join(rgb)
+
+print(rgb_to_hex("rgb(255, 255, 255)"))
+# #ffffff
+
+print(rgb_to_hex("rgb(1, 11, 111)"))
+# #010b6f
+
+print(rgb_to_hex("rgb(173, 216, 230)"))
+# #add8e6
+
+print(rgb_to_hex("rgb(79, 123, 201)"))
+# #4f7bc9
