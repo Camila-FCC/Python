@@ -1,0 +1,29 @@
+def repeat_vowels(s):
+
+    string = list(s)
+    i = 0
+
+    aeiou = "aAeEiIoOuU"
+    indexes = []
+
+    while i < len(string):
+
+        if string[i] in aeiou:
+            indexes.append(i)
+
+        i+=1
+    
+    j = 0
+    while j < len(indexes):
+        
+        string[indexes[j]] += string[indexes[j]].lower() * j
+
+        j+=1
+        
+
+    return "".join(string)
+
+
+print(repeat_vowels("hello world"))
+
+# "helloo wooorld"
