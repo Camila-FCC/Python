@@ -1,0 +1,52 @@
+def is_pangram(sentence, letters):
+
+    sentence = sentence.lower()
+    letters = letters.lower()
+
+    i = 0
+
+    while i < len(sentence):
+
+        if sentence[i].isalpha() == False:
+
+            sentence = list(sentence)
+
+            sentence[i] = ""
+
+            sentence = "".join(sentence)
+
+        i+=1
+    
+    test = "".join(sorted(list(set(sentence))))
+
+    letters = "".join(sorted(list(letters)))
+
+    return test == letters
+
+
+print(is_pangram("hello", "helo"))
+# True
+
+print(is_pangram("hello", "hel"))
+# False
+
+print(is_pangram("hello", "helow"))
+# False
+
+print(is_pangram("hello world", "helowrd"))
+# True
+
+print(is_pangram("Hello World!", "helowrd")) 
+# True
+
+print(is_pangram("Hello World!", "heliowrd")) 
+# False
+
+print(is_pangram("freeCodeCamp", "frcdmp"))
+# False
+
+print(is_pangram("The quick brown fox jumps over the lazy dog.", "abcdefghijklmnopqrstuvwxyz"))
+# True
+
+
+
