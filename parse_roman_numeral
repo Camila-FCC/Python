@@ -1,0 +1,31 @@
+from functools import reduce
+
+def parse_roman_numeral(numeral):
+
+    numeral = numeral.replace("I", "*1").replace("V", "*5").replace("X", "*10").replace("L", "*50").replace("C", "*100").replace("D", "*500").replace("M", "*1000")
+
+    numeral = numeral.split("*")[1:]
+
+    numeral = list(map(lambda x : int(x), numeral))
+
+    i = 0
+
+    while i < len(numeral)-1:
+
+        if numeral[i] < numeral[i+1]:
+            
+            numeral[i+1] -= numeral[i]
+
+            numeral[i] = 0
+                        
+        i+=1
+    
+    #print(numeral)
+        
+    numeral = reduce(lambda x,y : x+y, numeral)
+
+    return numeral
+
+
+print(parse_roman_numeral("XCIX"))
+# 99
