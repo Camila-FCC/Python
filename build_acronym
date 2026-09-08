@@ -1,0 +1,22 @@
+def build_acronym(s):
+
+    s = s.lower().split(" ")
+
+    i = 0
+
+    while i < len(s):
+
+        if i > 0 and s[i] in ["for", "an", "and", "by", "a", "of"]:
+
+            del s[i]
+        
+        i+=1
+    
+    s = list(map(lambda x : x[0].upper(), s))
+
+    return "".join(s)
+
+
+print(build_acronym("An unstoppable herd of waddling penguins overtakes the icy mountains and sings happily")) 
+
+# "AUHWPOTIMSH"
