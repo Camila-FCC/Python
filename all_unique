@@ -1,0 +1,7 @@
+def all_unique(s):
+
+    result = list(set(list(s)))
+
+    return len(result) == len(s)
+
+print(all_unique("!@#*$%^&*()aA")) # False
