@@ -1,0 +1,14 @@
+import re
+def reverse_sentence(sentence):
+
+    sentence = re.sub(r"\s{2,}", " ", sentence, flags=re.M)
+
+    sentence = sentence.split(" ")
+
+    sentence = " ".join(list(reversed(sentence)))
+
+    return sentence
+
+
+print(reverse_sentence("world hello"))
+# "hello world"
