@@ -1,0 +1,17 @@
+from functools import reduce
+
+def too_much_screen_time(hours):
+
+    three_row = ((hours[0] + hours[1] + hours[2]) / 3) >= 8 or ((hours[1] + hours[2] + hours[3]) / 3) >= 8 or ((hours[2] + hours[3] + hours[4]) / 3) >= 8 or ((hours[3] + hours[4] + hours[5]) / 3) >= 8 or ((hours[4] + hours[5] + hours[6]) / 3) >= 8
+
+    total = ((reduce(lambda x, y : x+y, hours)) / 7) >= 6
+
+    too_much = (len(list(filter(lambda x : x >= 10, hours))) > 0) or three_row or total
+
+    return too_much
+
+print(too_much_screen_time([5, 6, 6, 6, 6, 6, 6]))
+# False
+
+print(too_much_screen_time([1, 2, 3, 11, 1, 3, 4]))
+# True
