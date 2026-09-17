@@ -1,0 +1,44 @@
+def capitalize(paragraph):
+
+    result = paragraph.split(" ")
+
+    result = list(map(lambda x : x.capitalize() if result.index(x) == 0 else x.lower(), result))
+
+    result = " ".join(result)
+
+    i = 0
+
+    while i < len(result):
+
+        if ". " in result:
+
+            result = result.replace(f". {result[i]}", f". {result[i].upper()}")
+
+        if "? " in result:
+            
+            result = result.replace(f"? {result[i]}", f"? {result[i].upper()}")
+        
+        if "! " in result:
+
+            result = result.replace(f"! {result[i]}", f"! {result[i].upper()}")
+        
+        if f".{result[i]}" in result:
+
+            result = result.replace(f".{result[i]}", f".{result[i].upper()}")
+
+        if f"?{result[i]}" in result:
+
+            result = result.replace(f"?{result[i]}", f"?{result[i].upper()}")
+        
+        if f"!{result[i]}" in result:
+
+            result = result.replace(f"!{result[i]}", f"!{result[i].upper()}")
+
+        i+=1
+    
+    return result
+
+
+
+print(capitalize("hello world. how are you?"))
+# "Hello world. How are you?"
