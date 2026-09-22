@@ -1,0 +1,29 @@
+def number_of_videos(video_size, video_unit, drive_size, drive_unit):
+
+    if video_unit not in ["B", "KB", "MB", "GB"]:
+        return "Invalid video unit"
+    
+    if drive_unit not in ["GB", "TB"]:
+        return "Invalid drive unit"
+
+    b = 1
+    kb = 1000 * b
+    mb = 1000 * kb
+    gb = 1000 * mb
+    tb = 1000 * gb
+
+    if video_unit == "KB":
+        video_unit = kb
+    if video_unit == "MB":
+        video_unit = mb
+    if video_unit == "GB":
+        video_unit = gb
+    if drive_unit == "GB":
+        drive_unit = gb
+    if drive_unit == "TB":
+        drive_unit = tb 
+
+    return int((drive_size * drive_unit)/(video_size * video_unit))
+
+print(number_of_videos(1.5, "GB", 2.2, "TB"))
+# 1466
