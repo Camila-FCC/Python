@@ -1,0 +1,9 @@
+def cost_to_fill(tank_size, fuel_level, price_per_gallon):
+
+    tank_size -= fuel_level 
+    tank_size *= price_per_gallon 
+
+    return f"${tank_size:.2f}"
+
+print(cost_to_fill(15, 10, 3.50))
+# "$17.50"
