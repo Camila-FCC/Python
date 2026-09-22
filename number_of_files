@@ -1,0 +1,21 @@
+def number_of_files(file_size, file_unit, drive_size_gb):
+
+    b = 1
+    kb = 1000 * b
+    mb = 1000 * kb
+    gb = 1000 * mb
+
+    if file_unit == "B":
+        file_unit = b
+    if file_unit == "KB":
+        file_unit = kb
+    if file_unit == "MB":
+        file_unit = mb
+    
+    result = int((drive_size_gb * gb)/(file_size * file_unit))
+
+    return result
+
+
+print(number_of_files(500, "KB", 1))
+# 2000
