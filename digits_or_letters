@@ -1,0 +1,10 @@
+def digits_or_letters(s):
+
+    s = list(s)
+
+    digits = len(list(filter(lambda x : x.isdigit() == True, s)))
+
+    letters = len(list(filter(lambda x : x.isalpha() == True, s)))
+
+    return "digits" if digits > letters else "letters" if letters > digits else "tie"
+
