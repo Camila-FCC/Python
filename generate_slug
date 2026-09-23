@@ -1,0 +1,16 @@
+import re
+def generate_slug(str):
+
+    str = str.strip()
+
+    str = re.sub(r"[^a-z0-9\s]", "", str, re.M, re.I)
+
+    str = re.sub(r"\s+", "%20", str, re.M)
+
+    str = list(str)
+
+    str = list(filter(lambda x : x.isalpha() == True or x.isdigit() == True or x in [" ", "%"], str))
+
+    return "".join(str).lower()
+
+print(generate_slug(" hello-world "))
