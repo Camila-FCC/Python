@@ -1,0 +1,9 @@
+import re
+def is_mirror(str1, str2):
+
+    str1 = re.sub(r"\W", "", str1, re.M)
+    str2 = re.sub(r"\W", "", str2, re.M)
+
+    return str2[::-1] == str1
+
+print(is_mirror("RaceCar", "RaceCar"))
