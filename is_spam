@@ -1,0 +1,30 @@
+import re
+from functools import reduce
+def is_spam(number):
+
+    number = re.sub(r'[\+\-\(\)]', "", number, re.M).split(" ")
+
+    for x in "0123456789":
+        if x * 4 in "".join(number).replace(" ", ""):
+            return True
+
+    number = list(map(lambda x : int(x), number))
+
+    cc = number[0]
+    ac = number[1]
+    local_3digits = str(number[2])[:3]
+    local_4digits = str(number[2])[3:]
+
+    if len(str(cc)) > 2 or str(cc)[0] != "0" or (ac > 900 or ac < 200):
+        return True
+
+    calc = list(local_3digits)
+    calc = list(map(lambda x : int(x), calc))
+    calc = reduce(lambda x,y : x + y, calc)
+
+    if str(calc) in local_4digits:
+        return True   
+
+    return False
+
+print(is_spam("+0 (555) 534-0182"))
