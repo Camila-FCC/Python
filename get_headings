@@ -1,0 +1,10 @@
+def get_headings(csv):
+
+    csv = csv.split(",")
+
+    csv = list(map(lambda x : x.strip(), csv))
+
+    return csv
+
+print(get_headings("first name,last name,phone"))
+# ["first name", "last name", "phone"]
