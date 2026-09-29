@@ -1,0 +1,21 @@
+def array_diff(arr1, arr2):
+
+    check1 = list(set(arr1))
+    check2 = list(set(arr2))
+
+    result = []
+
+    for item in arr1:
+        if item not in check2:
+            result.append(item)
+    
+    for item in arr2:
+        if item not in check1:
+            result.append(item)
+
+    return sorted(result)
+
+
+print(array_diff(["one", "two", "three", "four", "six"], ["one", "three", "eight"]))
+
+# ["eight", "four", "six", "two"]
