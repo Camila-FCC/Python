@@ -1,0 +1,8 @@
+def second_largest(arr):
+
+    result = sorted(list(set(arr)), reverse=True)
+
+    return result[1]
+
+print(second_largest([2, 3, 4, 6, 6]))
+# 4
