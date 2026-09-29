@@ -1,0 +1,21 @@
+def get_longest_word(sentence):
+
+    sentence = sentence.replace(".", "").split(" ")
+
+    lengths = []
+
+    for word in sentence:
+        lengths.append(len(word))
+
+    result = sorted(lengths, reverse=True)
+
+    for length in result:
+
+        for word in sentence:
+
+            if len(word) == length:
+                return word
+
+
+print(get_longest_word("Coding challenges are fun and educational."))
+# "educational"
