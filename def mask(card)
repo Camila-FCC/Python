@@ -1,0 +1,14 @@
+def mask(card):
+
+    single_space = True if " " in card else False
+    single_hyphen = True if "-" in card else False
+
+    if single_space == True:
+        return "**** **** **** " + card[15:]
+    
+    if single_hyphen == True:
+        return "****-****-****-" + card[15:]
+    
+
+print(mask("4012-8888-8888-1881"))
+print(mask("5105 1051 0510 5100"))
