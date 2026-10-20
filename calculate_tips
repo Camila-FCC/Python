@@ -1,0 +1,27 @@
+def calculate_tips(meal_price, custom_tip):
+
+    # 15% 20% custom_tip
+
+    meal_price = float(meal_price[1:])
+
+    calc_15 = "$" + str("{:.2f}".format(meal_price * (15/100)))
+
+    calc_20 = "$" + str("{:.2f}".format(meal_price * 0.2))
+
+    custom_tip = custom_tip.replace("%", "")
+    
+    custom_tip = float(custom_tip)
+    #print(custom_tip)
+
+    calc_ct = "$" + str("{:.2f}".format(meal_price * (custom_tip/100)))
+
+    return [calc_15, calc_20, calc_ct]
+
+print(calculate_tips("$10.00", "25%"))
+# ["$1.50", "$2.00", "$2.50"]
+
+print(calculate_tips("$19.85", "9%"))
+# ["$2.98", "$3.97", "$1.79"]
+
+print(calculate_tips("$89.67", "26%"))
+# ["$13.45", "$17.93", "$23.31"]
