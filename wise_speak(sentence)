@@ -1,0 +1,29 @@
+def wise_speak(sentence):
+
+    last_punct = sentence[-1]
+    #print(last_punct)
+
+    words = ["have", "will", "must", "can", "are"]
+
+    sentence = sentence.lower().replace(last_punct, "").split(" ")
+
+    index_word_in_sentence = 0
+    which_word = ""
+
+    for w in sentence:
+        if w in words:
+            index_word_in_sentence = sentence.index(w)
+            which_word = w
+    
+    new_sentence = sentence[index_word_in_sentence+1:] + list(",") + sentence[0:index_word_in_sentence+1]
+
+    new_sentence = " ".join(new_sentence).replace(" , ", ", ") + last_punct
+
+    result = new_sentence[0].upper() + new_sentence[1:]
+
+    return result
+    #which_word
+    #index_word_in_sentence
+
+print(wise_speak("You must speak wisely."))
+# "Speak wisely, you must."
