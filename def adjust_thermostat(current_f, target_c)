@@ -1,0 +1,19 @@
+def adjust_thermostat(current_f, target_c):
+
+    # To convert Celsius to Fahrenheit, multiply the Celsius temperature by 1.8 and add 32 to the result
+    
+    # target_c => target_f
+    f = (target_c * 1.8) + 32
+
+    temp = f"Heat: {round(abs(f-current_f), 1)} degrees Fahrenheit" if current_f < f else f"Cool: {round(abs(f-current_f), 1)} degrees Fahrenheit" if current_f > f else "Hold"
+
+    return temp
+
+print(adjust_thermostat(32, 0))
+# "Hold"
+
+print(adjust_thermostat(70, 25))
+# "Heat: 7.0 degrees Fahrenheit"
+
+print(adjust_thermostat(72, 18))
+# "Cool: 7.6 degrees Fahrenheit"
