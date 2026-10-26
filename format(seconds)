@@ -1,0 +1,26 @@
+def format(seconds):
+
+    h = seconds // 3600
+    mm = seconds // 60
+    ss = seconds
+    ss %= 60
+    #print(ss < 10)
+  
+    if mm > 59:
+        mm %= 60
+        if len(str(mm)) < 2:
+            mm = "0" + str(mm)
+    
+    if ss < 10 and mm < 60:
+        return f"{mm}:0{ss}"
+    
+    if h == 0:
+        return f"{mm}:{ss}"
+        
+    return f"{h}:{mm}:{ss}"
+
+print(format(4000)) 
+# "1:06:40"
+
+print(format(1))
+# "0:01"
