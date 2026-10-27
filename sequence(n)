@@ -1,0 +1,15 @@
+def sequence(n):
+
+    i = 1
+
+    result = []
+
+    while i < (n+1):
+
+        result.append(str(i))
+
+        i+=1
+
+    return "".join(result)
+
+print(sequence(5))
