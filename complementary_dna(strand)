@@ -1,0 +1,10 @@
+def complementary_dna(strand):
+
+    result = strand.replace("A", "#").replace("T", "+").replace("C", "$").replace("G", "-")
+
+    result = result.replace("#", "T").replace("+", "A").replace("$", "G").replace("-", "C")
+
+    return result
+
+
+print(complementary_dna("ACGT"))
