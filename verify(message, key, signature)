@@ -9,10 +9,6 @@ def verify(message, key, signature):
 
     key = list(filter(lambda x : x.isalpha(), key))
     #print(key)
-    
-    for item in key:
-        if item.isalpha() == False:
-            key.replace(item, "")
 
     az = []
     azaz = []
