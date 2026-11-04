@@ -1,0 +1,70 @@
+from functools import reduce
+def verify(message, key, signature):
+
+    message = list(message)
+    key = list(key)
+
+    message = list(filter(lambda x : x.isalpha(), message))
+    #print(message)
+
+    key = list(filter(lambda x : x.isalpha(), key))
+    #print(key)
+    
+    for item in key:
+        if item.isalpha() == False:
+            key.replace(item, "")
+
+    az = []
+    azaz = []
+
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+    i = 1
+    j = 27
+    q = 0
+    w = 0
+
+    while len(az) < 26:
+
+        az.append(i)
+        azaz.append(j)
+
+        j += 1
+        i += 1
+    
+    alphabet_up = alphabet.upper()
+    alphabet_up = list(alphabet_up)
+    alphabet = list(alphabet)
+
+    while q < len(message):
+
+        if message[q] in alphabet:
+            message[q] = az[alphabet.index(message[q])]
+        
+        if message[q] in alphabet_up:
+            message[q] = azaz[alphabet_up.index(message[q])]
+
+        q += 1
+
+
+    while w < len(key):
+
+        if key[w] in alphabet:
+            key[w] = az[alphabet.index(key[w])]
+        
+        if key[w] in alphabet_up:
+            key[w] = azaz[(alphabet_up).index(key[w])]
+
+        w += 1
+    
+
+    calculate_key = reduce(lambda x,y : x + y, key)
+    calculate_msg = reduce(lambda x,y : x + y, message)
+    
+    result = calculate_msg + calculate_key
+
+    return result == signature
+
+
+print(verify("Is this valid?", "No", 210))
+# False
