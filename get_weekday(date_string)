@@ -1,0 +1,18 @@
+from datetime import datetime
+import calendar
+
+def get_weekday(date_string):
+
+    year = int(date_string.split("-")[0])
+    
+    month = int(date_string.split("-")[1])
+
+    day = int(date_string.split("-")[2])
+
+    #print(day)
+
+    result = datetime(year, month, day)
+
+    return calendar.day_name[result.weekday()]
+
+print(get_weekday("2025-11-06"))
