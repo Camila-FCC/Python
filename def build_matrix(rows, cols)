@@ -1,0 +1,20 @@
+def build_matrix(rows, cols):
+
+    matrix = []
+
+    item = list("0"*cols)
+    
+    item = list(map(lambda x : int(x), item))
+
+    while rows > 0:
+
+        matrix.append(item)
+
+        rows-=1
+    
+
+    return matrix
+
+
+print(build_matrix(2, 3))
+# [[0, 0, 0], [0, 0, 0]]
