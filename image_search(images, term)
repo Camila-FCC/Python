@@ -1,0 +1,9 @@
+def image_search(images, term):
+
+    res = list(filter(lambda x : term.lower() in x.lower(), images))
+
+    return res
+
+print(image_search(["Sunset.jpg", "Beach.png", "sunflower.jpeg"], "sun"))
+
+# ["Sunset.jpg", "sunflower.jpeg"]
