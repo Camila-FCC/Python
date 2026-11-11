@@ -1,0 +1,13 @@
+def get_extension(filename):
+
+    if "." not in filename or filename[-1] == ".":
+        return "none"
+
+    return filename[filename.rfind(".") + 1:]
+
+
+print(get_extension("archive.tar.gz"))
+"gz"
+
+print(get_extension("final.draft."))
+"none"
