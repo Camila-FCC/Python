@@ -1,0 +1,16 @@
+def generate_signature(name, title, company):
+
+    for char in name[0]:
+        if char in "abcdefghi".upper() or char in "abcdefghi":
+            name = name.replace(name[0], ">>" + name[0], 1)
+        if char in "jklmnopqr".upper() or char in "jklmnopqr":
+            name = name.replace(name[0], "--" + name[0], 1)
+        if char in "stuvwxyz".upper() or char in "stuvwxyz":
+            name = name.replace(name[0], "::" + name[0], 1)
+        
+    return f"{name}, {title} at {company}"
+
+
+print(generate_signature("Alice Reed", "Engineer", "TechCo"))
+
+# >>Alice Reed, Engineer at TechCo
