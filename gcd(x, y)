@@ -1,0 +1,38 @@
+def gcd(x, y):
+
+    i = 1
+    q = 1
+    divisors_y = []
+    divisors_x = []
+    xx = []
+    yy = []
+
+    while i < (x+1):
+
+        xx.append(i) 
+
+        i+=1
+    
+    while q < (y+1):
+
+        yy.append(q)
+
+        q+=1
+    
+    for n in xx:
+        if x % n == 0:
+            divisors_x.append(n)
+    
+    for n in yy:
+        if y % n == 0:
+            divisors_y.append(n)
+    
+    div_x = sorted(divisors_x, reverse=True)
+    div_y = sorted(divisors_y, reverse=True)
+
+    for value in div_x:
+        if value in div_y:
+            return value
+
+
+print(gcd(4, 6))
