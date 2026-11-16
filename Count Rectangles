@@ -1,0 +1,10 @@
+def count_rectangles(width, height):
+
+    width = (width * (width + 1)) / 2
+
+    height = (height * (height + 1)) / 2
+
+    return width * height
+
+print(count_rectangles(3, 2))
+# 18
