@@ -1,0 +1,32 @@
+def is_match(fingerprint_a, fingerprint_b):
+
+    same_length = len(fingerprint_a) == len(fingerprint_b)
+
+    diff_chars = []
+
+    if same_length is True:
+
+        i = 0
+
+        while i < len(fingerprint_a):
+
+            fingerprint_a = list(fingerprint_a)
+
+            fingerprint_b = list(fingerprint_b)
+
+            if fingerprint_a[i] != fingerprint_b[i]:
+                diff_chars.append(fingerprint_a[i])
+
+            i+=1
+    
+        ten_percent = len(diff_chars) <= (len(fingerprint_a)*0.1)
+    
+        return ten_percent
+    
+    return False
+
+print(is_match("thequickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthelazydog"))
+# True
+
+print(is_match("thequickbrownfoxjumpsoverthelazydog", "thequickbrownfoxjumpsoverthehazycat"))
+# False
