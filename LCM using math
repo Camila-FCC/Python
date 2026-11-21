@@ -1,0 +1,6 @@
+import math
+def lcm(a, b):
+
+    return math.lcm(a, b)
+
+print(lcm(9, 6))
