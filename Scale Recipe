@@ -1,0 +1,37 @@
+import re
+def scale_recipe(ingredients, scale):
+    
+    quantity = []
+    unit = []
+    ingredient = []
+
+    for item in ingredients:
+
+        item = item.split()
+        
+        quantity.append(item[0])
+
+        unit.append(item[1])
+
+        ingredient.append(item[2:])
+
+    quantity = list(map(lambda x : float(x) * scale if "." in x else int(x) * scale, quantity))
+
+    quantity = list(map(lambda x : int(x) if ".0" in str(x) else x, quantity))
+
+    i = 0
+
+    result = []
+    
+    while i < len(ingredients):
+        result.append(f'{quantity[i]} {unit[i]} {" ".join(ingredient[i])}')
+
+        i+=1
+    
+    return result
+
+print(scale_recipe(["2 C Flour", "1.5 T Sugar"], 2))
+# ["4 C Flour", "3 T Sugar"]
+
+print(scale_recipe(["2 C All-purpose Flour", "1 t Baking Soda", "1 t Salt", "1 C Butter", "0.5 C Sugar", "0.5 C Brown Sugar", "1 t Vanilla Extract", "2 C Chocolate Chips"], 2.5))
+# ["5 C All-purpose Flour", "2.5 t Baking Soda", "2.5 t Salt", "2.5 C Butter", "1.25 C Sugar", "1.25 C Brown Sugar", "2.5 t Vanilla Extract", "5 C Chocolate Chips"]
