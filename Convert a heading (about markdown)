@@ -1,0 +1,59 @@
+import re
+def convert(heading):
+
+    valid_markdown = re.findall(r'^\s*\#{1,6}\s+[\w\d\s\#]*', heading)
+
+    markdown_size = 0
+
+    for item in valid_markdown:
+        markdown_size = len(item)
+    
+    if markdown_size == len(heading):
+        heading = re.sub(r"^\s*\#{6}", "<h6>", heading)
+        
+        heading = re.sub(r"^\s*\#{5}", "<h5>", heading)
+        
+        heading = re.sub(r"^\s*\#{4}", "<h4>", heading)
+        
+        heading = re.sub(r"^\s*\#{3}", "<h3>", heading)
+        
+        heading = re.sub(r"^\s*\#{2}", "<h2>", heading)
+        
+        heading = re.sub(r"^\s*\#{1}", "<h1>", heading)
+
+        if "<h6>" in heading:
+            heading += "</h6>"
+        if "<h5>" in heading:
+            heading += "</h5>"
+        if "<h4>" in heading:
+            heading += "</h4>"
+        if "<h3>" in heading:
+            heading += "</h3>"
+        if "<h2>" in heading:
+            heading += "</h2>"
+        if "<h1>" in heading:
+            heading += "</h1>"
+    
+        heading = re.sub(r"\>\s+", ">", heading)
+
+        #heading = re.sub(r"^\s+", "", heading)
+        
+        return heading
+    
+    return "Invalid format"
+
+
+print(convert("My heading"))
+# "Invalid format"
+
+print(convert("##### My level 5 heading"))
+# "<h5>My level 5 heading</h5>"
+
+print(convert("#My heading"))
+# "Invalid format"
+
+print(convert("  ###  My level 3 heading"))
+# "<h3>My level 3 heading</h3>"
+
+print(convert("## My #2 heading"))
+# "<h2>My #2 heading</h2>"
