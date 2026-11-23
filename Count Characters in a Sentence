@@ -1,0 +1,40 @@
+def count_characters(sentence):
+
+    sentence = sentence.lower()
+
+    sentence_dict = {}
+
+    for item in sentence:
+        if item.isalpha():
+            sentence_dict[item] = 0
+    
+
+    i = 0
+
+    while i < len(sentence):
+
+        if sentence[i] in sentence_dict.keys():
+            sentence_dict[sentence[i]] += 1
+
+        i+=1
+    
+    final = []
+
+    for item in sentence:
+
+        if item.isalpha():
+            final.append(item)
+    
+
+    final = list(set(final))
+    final = sorted(final)
+
+    result = []
+
+    for item in final:
+        item += f' {sentence_dict[item]}'
+        result.append(item)
+
+    return result
+
+print(count_characters("I love coding challenges!"))
