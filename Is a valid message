@@ -1,0 +1,27 @@
+def is_valid_message(message, validation):
+
+    message = message.lower()
+    validation = validation.lower()
+
+    message = message.replace(" ", "#")
+
+    for item in message:
+        if item == " ":
+            return False
+
+    result = message.split("#")
+
+    result = list(map(lambda x : x if x.isalpha() else "", result))
+
+    if len(result) != len(validation):
+        return False
+
+    for word in result:
+        for char in validation:
+            if word[0] in validation and word[0].isalpha():
+                return True
+        
+    return False
+
+print(is_valid_message("hello world", "hw"))
+# True
