@@ -1,0 +1,43 @@
+def is_fizz_buzz(sequence):
+
+    ascending_order_numbers = []
+
+    i = 1
+
+    first_is_one = sequence[0]
+
+    while i < (len(sequence)+1):
+
+        ascending_order_numbers.append(i)
+
+        i+=1
+    
+    x = 0
+    check = []
+
+    while x < len(sequence):
+
+        if x > 0 and (ascending_order_numbers[x] % 3 == 0 and ascending_order_numbers[x] % 5 == 0):
+            if sequence[x] == "FizzBuzz":
+                check.append("ok")
+        
+        if x > 0 and (ascending_order_numbers[x] % 3 == 0):
+            if sequence[x] == "Fizz":
+                check.append("ok")
+        
+        if x > 0 and (ascending_order_numbers[x] % 5 == 0):
+            if sequence[x] == "Buzz":
+                check.append("ok")
+        
+        if (ascending_order_numbers[x] % 3 != 0 and ascending_order_numbers[x] % 5 != 0):
+            if sequence[x] == ascending_order_numbers[x]:
+                check.append("ok")
+
+        x+=1
+
+    check = len(list(filter(lambda x : x == "ok", check)))
+
+    return check == len(sequence)
+
+print(is_fizz_buzz([1, 2, 3, 4]))
+# False
